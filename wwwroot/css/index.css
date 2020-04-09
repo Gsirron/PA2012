@@ -1,0 +1,23 @@
+﻿
+body {
+    background-color: #f2f2f2;
+}
+
+#welcome {
+    color: #800000;
+}
+
+#border {
+    background-color: white;
+    border: 3px solid #dedede;
+    border-radius: 5px;
+    text-align: center;
+    overflow: auto;
+}
+
+p {
+    text-align: center;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 30px;
+}
