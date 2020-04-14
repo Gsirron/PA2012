@@ -20,7 +20,7 @@ namespace Prototype.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Application's Description Page.";
+            ViewData["Message"] = "Impact on Undergraduate Nursing Students' Digital Literacy and Health Informatics Competencies Post Implementation of a Nursing Informatics Module.";
 
             return View();
         }
