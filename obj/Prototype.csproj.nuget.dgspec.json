@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Unistuff\\PX\\Project\\Prototype\\Prototype.csproj": {}
+    "F:\\Unistuff\\PX\\rashim+norris\\Prototype\\Prototype.csproj": {}
   },
   "projects": {
-    "F:\\Unistuff\\PX\\Project\\Prototype\\Prototype.csproj": {
+    "F:\\Unistuff\\PX\\rashim+norris\\Prototype\\Prototype.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Unistuff\\PX\\Project\\Prototype\\Prototype.csproj",
+        "projectUniqueName": "F:\\Unistuff\\PX\\rashim+norris\\Prototype\\Prototype.csproj",
         "projectName": "Prototype",
-        "projectPath": "F:\\Unistuff\\PX\\Project\\Prototype\\Prototype.csproj",
+        "projectPath": "F:\\Unistuff\\PX\\rashim+norris\\Prototype\\Prototype.csproj",
         "packagesPath": "C:\\Users\\Norris\\.nuget\\packages\\",
-        "outputPath": "F:\\Unistuff\\PX\\Project\\Prototype\\obj\\",
+        "outputPath": "F:\\Unistuff\\PX\\rashim+norris\\Prototype\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "F:\\Microsoft\\Xamarin\\NuGet\\",
