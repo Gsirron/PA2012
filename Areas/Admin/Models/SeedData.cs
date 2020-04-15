@@ -17,17 +17,17 @@ namespace Prototype.Areas.Admin.Models
                 new Participant(){
                 Participant_Id = 23,
                 Participant_Email = "Janedo@gmail.com",
-                Participant_Data = "some Data" },
+                Participant_Data = "Participant Data" },
 
                 new Participant(){
                 Participant_Id = 17,
                 Participant_Email = "Janes.Bob@gmail.com",
-                Participant_Data = "some Data" },
+                Participant_Data = "Participant Data" },
 
                 new Participant(){
                 Participant_Id = 117,
                 Participant_Email = "Megan.Dale@gmail.com",
-                Participant_Data = "some Data" },
+                Participant_Data = "Participant Data" },
 
 
             };
