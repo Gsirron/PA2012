@@ -1,12 +1,12 @@
 ﻿
 @model IEnumerable< Prototype.Areas.Admin.Models.Participant>
 @{
-    ViewData["Title"] = "Index";
+    
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 
-<h2>Participants Phase 1</h2>
+    <h2>@ViewData["Title"]</h2>
 
 <p>
 
@@ -25,6 +25,7 @@
             <th></th>
         </tr>
     </thead>
+
     <tbody>
         @foreach (var item in Model)
         {
@@ -42,5 +43,9 @@
                 </td>
             </tr>
         }
-        </tbody>
+    </tbody>
+    
 </table>
+<a class="btn btn-primary mb-3" style="width:auto">
+    Export to CSV
+</a>

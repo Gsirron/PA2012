@@ -27,6 +27,8 @@ namespace Prototype.Areas.Admin.Controllers
 
             var participants = seedData.GetParticipants();
 
+            ViewData["Title"] = "Participants";
+
             return View(participants);
         }
         
