@@ -3,8 +3,44 @@
     ViewData["Title"] = "Participate";
 }
 
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Participate</title>
+    <link rel="stylesheet" href="~/css/index.css" />
+</head>
+<body> 
+    <div id="welcome" class="text-center">
+        <h1 style="color: #800000;" class="display-4">@ViewData["Title"]</h1>
+    </div>
+    <div id="border">
+        <img src="~/images/participate.jpg" height="400" class="img-responsive" />
 
-<p>Use this area to provide additional information.</p>
+        <p style="font-family: Verdana, sans-serif; font-size: 20px; color: #808080;">
+            Please select a group for participation
+        </p>
+        <div>
+            <input type="radio" id="student" name="group" value="student">
+            <label for="student">Student</label>
+            <br>
+            <input type="radio" id="educator" name="group" value="educator">
+            <label for="educator">Educator</label>
+            <br>
+            <input type="radio" id="professional" name="group" value="professional">
+            <label for="professional">Professional</label>
+        </div>
+        <br>
+        <div style="margin-bottom: 30px;">
+         <button onclick=" window.open('https://www.limesurvey.org/','_blank')">Participate in Phase 1</button>
+         <button onclick=" window.open('https://www.limesurvey.org/','_blank')">Participate in Phase 2</button>
+        </div>
+        <hr style="margin-left: 150px; margin-right: 150px; margin-top: 30px; margin-bottom: 30px;">
 
+        <p style="font-family: Verdana, sans-serif; font-size: 15px; color: #808080;">
+            For further information on the program, please refer to About Page (Above) or contact Annette Stunden by email at A.Stunden@westernsydney.edu.au
+        </p>
+    </div>
+</body>
+</html>

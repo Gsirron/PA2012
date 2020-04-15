@@ -2,7 +2,46 @@
 @{
     ViewData["Title"] = "About";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <link rel="stylesheet" href="~/css/index.css" />
+</head>
+<body>
+    <div id="welcome" class="text-center">
+        <h1 style="color: #800000;" class="display-4">@ViewData["Title"]</h1>
+    </div>
+    <div id="border">
+        <img src="~/images/nursing_informatics.jpg" height="400" class="img-responsive" />
+        <p style="text-align:left; font-family: Verdana, sans-serif; font-size: 15px; color: #808080;">
+            <br>
+            Nursing education in Australia currently teaches undergraduate nursing students’ basic digital literacy skills but is yet to
+            implement e-health literacy, such as health informatics, into the undergraduate Bachelor of Nursing curricula.
+        </p>
+        <p style="text-align:left; font-family: Verdana, sans-serif; font-size: 15px; color: #808080;">
+            The purpose of this project is to:
+            <br>
+            • To develop a contemporary digital literacy and health informatics skills competency framework which addresses nursing
+            students’ digital literacy skills gap.
+            <br>
+            • Inform educators of curriculum changes required to successfully bridge the knowledge and skills gap related to digital literacy
+            and health informatics of the future nurse workforce.
+            <br>
+            • To equip undergraduate nursing students with the appropriate graduate attributes which prepares them for the digitalised
+            workforce.
+        </p>
+        <p style="text-align:left; font-family: Verdana, sans-serif; font-size: 15px; color: #808080;">
+            This is a mixed method project which has a qualitative (phase 1) and quantitative approach (phase 2)
+            Phase 2 consists of cohort A ( intervention group) and cohort B (control group
+        </p>
+        <hr style="margin-left: 150px; margin-right: 150px; margin-top: 30px; margin-bottom: 30px;">
 
-<p>Use this area to provide additional information.</p>
+        <p style="font-family: Verdana, sans-serif; font-size: 15px; color: #808080;">
+            For further information on the program, please contact Annette Stunden by email at A.Stunden@westernsydney.edu.au
+        </p>
+    </div>
+</body>
+</html>
