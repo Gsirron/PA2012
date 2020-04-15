@@ -9,9 +9,64 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Participate</title>
-    <link rel="stylesheet" href="~/css/index.css" />
+    <link href="~/css/index.css" rel="stylesheet"  />
+    <script type="text/javascript">
+        function PopUp(hideOrshow) {
+            if (hideOrshow == 'hide') document.getElementById('ac-wrapper').style.display = "none";
+            else document.getElementById('ac-wrapper').removeAttribute('style');
+        }
+        window.onload = function () {
+            setTimeout(function () {
+                PopUp('show');
+            }, 0000);
+        }
+    </script>
 </head>
-<body> 
+<body>
+    <div id="ac-wrapper" style='display:none'>
+        <div id="popup">
+            <center>
+                <h2 style="color: #800000;">Consent Form</h2>
+                <p style="text-align:left; font-family: Verdana, sans-serif; font-size: 15px; color: #808080;">
+                    The purpose of this research project is to identify if nursing students are equipped with information communication technology (ICT) skills to work in a modern healthcare setting.
+                    This is a research project being conducted by Annette Stunden at Western Sydney University.
+                    You are invited to participate in this research project because you are a nursing student of Western Sydney University.
+                    Your participation in this research study is voluntary.
+                    You may choose not to participate.
+                    If you decide to participate in this research survey, you may withdraw at any time.
+                    If you decide not to participate in this study or if you withdrawl from participating at any time, you will not be penalized.
+                    <br><br>
+                    The procedure involves filling an online survey that will take approximately 30 minutes.
+                    Your responses will be confidential and we do not collect identifying information such as your name, email address or IP address.
+                    <br><br>
+                    We will do our best to keep your information confidential.
+                    All data is stored in a password protected electronic format.
+                    To help protect your confidentiality, the surveys will not contain information that will personally identify you.
+                    The results of this study will be used for scholarly purposes only and may be shared with Western Sydney University representatives.
+                    <br><br>
+                    If you have any questions about the research study, please contact Annette Stunden at <a href="mailto:A.Stunden@westernsydney.edu.au">A.Stunden@westernsydney.edu.au</a>.
+                    This research has been reviewed according to Western Sydney University IRB procedures for research involving human subjects.
+                </p>
+                <p style="text-align:left; font-family: Verdana, sans-serif; font-size: 15px; color: #808080;">
+                    <b>
+                        ELECTRONIC CONSENT: Please select your choice below.
+                        <br><br>
+                        Clicking on the "agree" button below indicates that:
+                        <br><br>
+                        • you have ready the above information
+                        <br>
+                        • you voluntarily agree to participate
+                        <br>
+                        • you are at least 18 years of age
+                        <br><br>
+                        If you do not wish to participate in the research study, please decline participation by clicking on the "disagree" button.
+                    </b>
+                </p>
+                <input type="submit" name="Agree" value="Agree" onClick="PopUp('hide')" />
+                <input type="submit" name="Disagree" value="Disagree" />
+            </center>
+        </div>
+    </div>
     <div id="welcome" class="text-center">
         <h1 style="color: #800000;" class="display-4">@ViewData["Title"]</h1>
     </div>
@@ -33,13 +88,13 @@
         </div>
         <br>
         <div style="margin-bottom: 30px;">
-         <button onclick=" window.open('https://www.limesurvey.org/','_blank')">Participate in Phase 1</button>
-         <button onclick=" window.open('https://www.limesurvey.org/','_blank')">Participate in Phase 2</button>
+            <button onclick=" window.open('https://www.limesurvey.org/','_blank')">Participate in Phase 1</button>
+            <button onclick=" window.open('https://www.limesurvey.org/','_blank')">Participate in Phase 2</button>
         </div>
         <hr style="margin-left: 150px; margin-right: 150px; margin-top: 30px; margin-bottom: 30px;">
 
         <p style="font-family: Verdana, sans-serif; font-size: 15px; color: #808080;">
-            For further information on the program, please refer to About Page (Above) or contact Annette Stunden by email at A.Stunden@westernsydney.edu.au
+            For further information on the program, please refer to About Page (Above) or contact Annette Stunden by email at <a href="mailto:A.Stunden@westernsydney.edu.au">A.Stunden@westernsydney.edu.au</a>
         </p>
     </div>
 </body>
