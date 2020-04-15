@@ -22,9 +22,9 @@ namespace Prototype.Areas.Admin.Controllers
 
         public IActionResult ListUsers()
         {
-            var users = UserManager.Users;
 
-            return View(users);
+
+            return View();
         }
         
         public IActionResult Index()

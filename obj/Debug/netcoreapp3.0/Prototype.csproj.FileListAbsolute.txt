@@ -318,8 +318,9 @@ F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Razor\Areas\Identity\Pa
 F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
-F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Prototype.csprojAssemblyReference.cache
 F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Shared\Index.cshtml.g.cs
 F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
 F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Shared\_ViewStart.cshtml.g.cs
 F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Shared\ListUsers.cshtml.g.cs
+F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Shared\_ManageNav.cshtml.g.cs
+F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Shared\_ViewImports.cshtml.g.cs

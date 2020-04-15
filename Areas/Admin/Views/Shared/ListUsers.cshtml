@@ -1,36 +1,43 @@
-﻿@using Microsoft.AspNetCore.Identity
-@using Prototype.Areas.Identity.Data
-
-@model IEnumerable<PrototypeUser>
-
-@{ 
-    ViewBag.Title = "All Users;";
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h1>All Users </h1>
 
-@if(Model.Any())
-    { 
-    <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-primary mb-3" style="width:auto">Add New User 
-    </a>
+<h2>Participants Phase 1</h2>
 
-    foreach (var user in Model)
-    {
-        <div class="card mb-3">
-            <div class=" = "card-header>
-                User Id ; @user.Id
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">@user.Email</h5>
-            </div>
-            <div class="card-footer">
-                <a href="#" class=" = " btn btn-danger">Edit</a>
-                <a href="#" class=" = " btn btn-danger">Delete</a>
-            </div>
-        </div>
-    }
-}
-else
-{
+<p>
 
-}
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Email
+            </th>
+
+            <th>
+                Data
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>
+                    Jane.doe@gmail.com
+                </td>
+                <td>
+                    Data Stored
+                </td>
+               
+                <td>
+                        <a asp-page="/Edit" >Edit</a> |
+                    <a asp-page="/Details" >Details</a> |
+                       <a asp-page="/Delete" >Delete</a> |
+                </td>
+            </tr>
+        
+    </tbody>
+</table>

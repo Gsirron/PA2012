@@ -12,14 +12,6 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<div id="mySidenav" class="sidenav">
-
-    <a class="nav-link text-white" asp-controller="Home" asp-action="Index">Index</a>
-    <a class="nav-link text-white" asp-area="Admin" asp-controller="Home" asp-action="ListUsers">List Users</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
-</div>
-
 
 <h1>All Users </h1>
 
@@ -36,10 +28,10 @@
                 User Id ; @user.Id
             </div>
             <div class="card-body">
-                <h5 class="card-title">@user.Email</h5>
+                <p class="card-title">@user.Email</p>
             </div>
             <div class="card-footer">
-                <a href="#" class=" = " btn btn-danger">Edit</a>
+                <a href="#" class=" = " btn btn-danger">Edit</a> |
                 <a href="#" class=" = " btn btn-danger">Delete</a>
             </div>
         </div>
