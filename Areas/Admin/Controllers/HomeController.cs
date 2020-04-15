@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Prototype.Areas.Admin.Models;
 using Prototype.Areas.Identity.Data;
 
 namespace Prototype.Areas.Admin.Controllers
@@ -22,9 +23,11 @@ namespace Prototype.Areas.Admin.Controllers
 
         public IActionResult ListUsers()
         {
+            SeedData seedData = new SeedData();
 
+            var participants = seedData.GetParticipants();
 
-            return View();
+            return View(participants);
         }
         
         public IActionResult Index()
@@ -32,6 +35,11 @@ namespace Prototype.Areas.Admin.Controllers
             var users = UserManager.Users;
 
             return View(users);
+        }
+
+        public IActionResult SiteContent()
+        {
+            return View();
         }
     }
 }
