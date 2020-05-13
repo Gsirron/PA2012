@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Prototype.Areas.Admin.Models;
 using Prototype.Areas.Identity.Data;
 
 namespace Prototype.Models
@@ -16,6 +17,7 @@ namespace Prototype.Models
         {
         }
 
+        public DbSet<Participant> Participant { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

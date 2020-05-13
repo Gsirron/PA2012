@@ -15,17 +15,17 @@ namespace Prototype.Areas.Admin.Models
             List<Participant> result = new List<Participant>
             {
                 new Participant(){
-                Participant_Id = 23,
+                Id = 23,
                 Participant_Email = "Janedo@gmail.com",
                 Participant_Data = "Participant Data" },
 
                 new Participant(){
-                Participant_Id = 17,
+                Id = 17,
                 Participant_Email = "Janes.Bob@gmail.com",
                 Participant_Data = "Participant Data" },
 
                 new Participant(){
-                Participant_Id = 117,
+                Id = 117,
                 Participant_Email = "Megan.Dale@gmail.com",
                 Participant_Data = "Participant Data" },
 
