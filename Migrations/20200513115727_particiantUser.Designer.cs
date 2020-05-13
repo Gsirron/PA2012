@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Prototype.Models;
 
 namespace Prototype.Migrations
 {
     [DbContext(typeof(PrototypeContext))]
-    partial class PrototypeContextModelSnapshot : ModelSnapshot
+    [Migration("20200513115727_particiantUser")]
+    partial class particiantUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -156,7 +158,7 @@ namespace Prototype.Migrations
 
             modelBuilder.Entity("Prototype.Areas.Admin.Models.Participant", b =>
                 {
-                    b.Property<int>("ParticipantId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -167,7 +169,7 @@ namespace Prototype.Migrations
                     b.Property<string>("Participant_Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ParticipantId");
+                    b.HasKey("Id");
 
                     b.ToTable("Participant");
                 });

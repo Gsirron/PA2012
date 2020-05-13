@@ -2,37 +2,55 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Prototype.Areas.Admin.Models;
+using Prototype.Areas.Identity.Data;
+using Prototype.Models;
 
 namespace Prototype.Areas.Admin.Models
 {
     public class SeedData
     {
-
-        public List<Participant> GetParticipants()
+        public static void Initialize(IServiceProvider serviceProvider)
         {
 
-            List<Participant> result = new List<Participant>
+            using (var context = new PrototypeContext(
+                serviceProvider.GetRequiredService<
+                    DbContextOptions<PrototypeContext>>()))
             {
-                new Participant(){
-                Participant_Id = 23,
-                Participant_Email = "Janedo@gmail.com",
-                Participant_Data = "Participant Data" },
+                if(context.Participant.Any())
+                {
+                    return; // db has been seeded
+                }
 
-                new Participant(){
-                Participant_Id = 17,
-                Participant_Email = "Janes.Bob@gmail.com",
-                Participant_Data = "Participant Data" },
+                context.Participant.AddRange(
 
-                new Participant(){
-                Participant_Id = 117,
-                Participant_Email = "Megan.Dale@gmail.com",
-                Participant_Data = "Participant Data" },
+                    new Participant()
+                    {
+                        
+                        Participant_Email = "Janedo@gmail.com",
+                        Participant_Data = "Participant Data"
+                    },
 
 
-            };
+                    new Participant()
+                    {
+                        
+                        Participant_Email = "Janes.Bob@gmail.com",
+                        Participant_Data = "Participant Data"
+                    },
 
-            return result;
+                    new Participant()
+                    {
+                        
+                        Participant_Email = "Megan.Dale@gmail.com",
+                        Participant_Data = "Participant Data"
+                    }
+
+                    );
+                context.SaveChanges();
+            }
         }
     }
 }
