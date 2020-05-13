@@ -32,9 +32,44 @@ namespace Prototype.Controllers
             return View();
         }
 
-        public IActionResult Participate()
+        public IActionResult Phase1Student()
         {
-            ViewData["Message"] = "Application's Participate Page.";
+            ViewData["Message"] = "Application's Phase 1 as Student Participate Page.";
+
+            return View();
+        }
+
+        public IActionResult Phase1Educator()
+        {
+            ViewData["Message"] = "Application's Phase 1 as Educator Participate Page.";
+
+            return View();
+        }
+
+        public IActionResult Phase1Professional()
+        {
+            ViewData["Message"] = "Application's Phase 1 as Professional Participate Page.";
+
+            return View();
+        }
+
+        public IActionResult Phase2PreTest()
+        {
+            ViewData["Message"] = "Application's Phase 2 Pre-Test Participate Page.";
+
+            return View();
+        }
+
+        public IActionResult Phase2PostTest()
+        {
+            ViewData["Message"] = "Application's Phase 2 Post-Test Participate Page.";
+
+            return View();
+        }
+
+        public IActionResult ParticipateClosed()
+        {
+            ViewData["Message"] = "Application's Participation Closed Page.";
 
             return View();
         }

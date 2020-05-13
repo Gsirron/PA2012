@@ -1,0 +1,165 @@
+﻿
+@{
+    ViewData["Title"] = "Phase 2 Post Test";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Participate</title>
+    <link href="~/css/index.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function PopUp(hideOrshow) {
+            if (hideOrshow == 'hide') document.getElementById('ac-wrapper').style.display = "none";
+            else document.getElementById('ac-wrapper').removeAttribute('style');
+        }
+        function ScreenQuestions(hideOrshow) {
+            if (hideOrshow == 'hide') document.getElementById('screen-questions').style.display = "none";
+            else document.getElementById('screen-questions').removeAttribute('style');
+        }
+        window.onload = function () {
+            setTimeout(function () {
+                PopUp('hide');
+                ScreenQuestions('hide');
+            }, 0000);
+        }
+    </script>
+</head>
+<body>
+    <div id="ac-wrapper" style='display:none'>
+        <div id="popup">
+            <center>
+                <h2 style="color: #800000;">Consent Form</h2>
+                <p style="text-align:left; font-family: Verdana, sans-serif; font-size: 15px; color: #808080;">
+                    The purpose of this research project is to identify if nursing students are equipped with information communication technology (ICT) skills to work in a modern healthcare setting.
+                    This is a research project being conducted by Annette Stunden at Western Sydney University.
+                    You are invited to participate in this research project because you are a nursing student of Western Sydney University.
+                    Your participation in this research study is voluntary.
+                    You may choose not to participate.
+                    If you decide to participate in this research survey, you may withdraw at any time.
+                    If you decide not to participate in this study or if you withdrawl from participating at any time, you will not be penalized.
+                    <br><br>
+                    The procedure involves filling an online survey that will take approximately 30 minutes.
+                    Your responses will be confidential and we do not collect identifying information such as your name, email address or IP address.
+                    <br><br>
+                    We will do our best to keep your information confidential.
+                    All data is stored in a password protected electronic format.
+                    To help protect your confidentiality, the surveys will not contain information that will personally identify you.
+                    The results of this study will be used for scholarly purposes only and may be shared with Western Sydney University representatives.
+                    <br><br>
+                    If you have any questions about the research study, please contact Annette Stunden at <a href="mailto:A.Stunden@westernsydney.edu.au">A.Stunden@westernsydney.edu.au</a>.
+                    This research has been reviewed according to Western Sydney University IRB procedures for research involving human subjects.
+                </p>
+                <p style="text-align:left; font-family: Verdana, sans-serif; font-size: 15px; color: #808080;">
+                    <b>
+                        ELECTRONIC CONSENT: Please select your choice below.
+                        <br><br>
+                        Clicking on the "agree" button below indicates that:
+                        <br><br>
+                        • you have ready the above information
+                        <br>
+                        • you voluntarily agree to participate
+                        <br>
+                        • you are at least 18 years of age
+                        <br><br>
+                        If you do not wish to participate in the research study, please decline participation by clicking on the "disagree" button.
+                    </b>
+                </p>
+                <input type="submit" name="Agree" value="Agree" onClick="ScreenQuestions('show'); PopUp('hide')" />
+                <input type="submit" name="Disagree" value="Disagree" onClick="PopUp('hide')" />
+            </center>
+        </div>
+    </div>
+
+    <div id="screen-questions" style='display:none'>
+        <div id="screenquestions">
+            <center>
+                <h2 style="color: #800000;">Screening Questions</h2>
+                <p style="text-align:left; font-family: Verdana, sans-serif; font-size: 15px; color: #808080;">
+                    *Please fill in the following details before continuing.
+                </p>
+                <form style="text-align:left; margin-left:200px;">
+                    <h5 style="margin-left:-20px;">Age</h5>
+                    <input type="radio" id="group1" name="age" value="group1" required>
+                    <label for="group1">18-25</label><br>
+                    <input type="radio" id="group2" name="age" value="group2">
+                    <label for="group2">26-40</label><br>
+                    <input type="radio" id="group3" name="age" value="group3">
+                    <label for="group3">40+</label><br><br>
+                    <h5 style="margin-left:-20px;">Gender</h5>
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label><br>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label><br><br>
+                    <h5 style="margin-left:-20px;">Education</h5>
+                    <label for="university">University:</label>
+                    <input size="40" type="text" id="university" name="university" required><br>
+                    <label for="course">Course:</label>
+                    <input size="30" type="text" id="course" name="course" required>
+                    <label for="year">Year:</label>
+                    <select id="year" name="year" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select><br><br>
+                    <h5 style="margin-left:-20px;">Email</h5>
+                    <label for="email">Email:</label>
+                    <input size="30" type="email" id="email" name="email" required>
+                    <br><br><br>
+                    <input style="margin-left:220px" type="submit" name="proceed" value="Proceed" />
+                    <input type="reset" name="cancel" value="Cancel" onClick="ScreenQuestions('hide')" />
+                </form>
+            </center>
+        </div>
+    </div>
+
+    <div id="welcome" class="text-center">
+
+        <h1 style="color: #800000;" class="display-4">@ViewData["Title"]</h1>
+
+    </div>
+
+    <div id="border">
+        <img src="~/images/participate.jpg" height="400" class="img-responsive" />
+        <br><br>
+        <h2 style="color: #800000;">Information Sheet</h2>
+        <!--Information Sheet-->
+        <p style="text-align:left; font-family: Verdana, sans-serif; font-size: 15px; color: #808080;">
+            <br>
+            Nursing education in Australia currently teaches undergraduate nursing students’ basic digital literacy skills but is yet to
+            implement e-health literacy, such as health informatics, into the undergraduate Bachelor of Nursing curricula.
+        </p>
+        <p style="text-align:left; font-family: Verdana, sans-serif; font-size: 15px; color: #808080;">
+            The purpose of this project is to:
+            <br>
+            • To develop a contemporary digital literacy and health informatics skills competency framework which addresses nursing
+            students’ digital literacy skills gap.
+            <br>
+            • Inform educators of curriculum changes required to successfully bridge the knowledge and skills gap related to digital literacy
+            and health informatics of the future nurse workforce.
+            <br>
+            • To equip undergraduate nursing students with the appropriate graduate attributes which prepares them for the digitalised
+            workforce.
+        </p>
+        <p style="text-align:left; font-family: Verdana, sans-serif; font-size: 15px; color: #808080;">
+            This is a mixed method project which has a qualitative (phase 1) and quantitative approach (phase 2)
+            Phase 2 consists of cohort A ( intervention group) and cohort B (control group)
+        </p>
+        <br>
+        <!--Information Sheet-->
+        <div style="margin-bottom: 30px;">
+            <button type="submit" class="btn btn-primary" onclick="PopUp('show')">Proceed</button>
+        </div>
+        <hr style="margin-left: 150px; margin-right: 150px; margin-top: 30px; margin-bottom: 30px;">
+
+        <p style="font-family: Verdana, sans-serif; font-size: 15px; color: #808080;">
+            For further information on the program, please refer to About Page (Above) or contact Annette Stunden by email at <a href="mailto:A.Stunden@westernsydney.edu.au">A.Stunden@westernsydney.edu.au</a>
+        </p>
+    </div>
+</body>
+</html>
