@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Prototype.Areas.Admin.Models;
 using Prototype.Areas.Identity.Data;
+using Prototype.Models;
 
 namespace Prototype.Areas.Admin.Controllers
 
@@ -13,23 +15,23 @@ namespace Prototype.Areas.Admin.Controllers
 
     public class HomeController : Controller
     {
-        private readonly UserManager<PrototypeUser> UserManager;
+        private readonly PrototypeContext UserManager;
 
-        public HomeController(UserManager<PrototypeUser> userManager)
+        public HomeController(PrototypeContext userManager)
         {
             this.UserManager = userManager;
         }
 
 
-        public IActionResult ListUsers()
+        public async Task<IActionResult> ListUsers()
         {
-            SeedData seedData = new SeedData();
+            var participants = from m in UserManager.Participant
+                               select m;
 
-            var participants = seedData.GetParticipants();
 
             ViewData["Title"] = "Participants";
 
-            return View(participants);
+            return View(await participants.ToListAsync());
         }
         
         public IActionResult Index()
