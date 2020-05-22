@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Prototype.Models;
 
 namespace Prototype.Areas.Admin.Controllers
@@ -16,15 +18,28 @@ namespace Prototype.Areas.Admin.Controllers
 
         public SiteDataController(PrototypeContext context)
         {
-            context = _context;
+            
+            _context = context;
+  
 
         }
         // GET: SiteData
-        public ActionResult Index()
-        {
-            return View();
-        }
+        
+        
 
+        public async Task<IActionResult> Index()
+        {
+            
+            var SiteData = await _context.SiteData
+                .FirstOrDefaultAsync(m => m.SiteDataId == 1);
+
+            if(SiteData == null)
+            {
+                return NotFound();
+            }
+            
+            return View(SiteData);
+        }
         // GET: SiteData/Details/5
         public ActionResult Details(int id)
         {

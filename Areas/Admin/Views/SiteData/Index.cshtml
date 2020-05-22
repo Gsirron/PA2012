@@ -1,4 +1,5 @@
 ﻿
+@model Prototype.Models.SiteData
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -9,7 +10,9 @@
         Current Website Link
     </div>
     <div class="card-body">
-        <h1 class="card-title"></h1>
+        <h1 class="card-title">
+            @Html.DisplayFor(model => model.Website_Link)
+        </h1>
     </div>
     <div class="card-footer">
         <a href="#" class=" btn btn-danger">Edit</a>
@@ -21,7 +24,9 @@
         Participate Phase
     </div>
     <div class="card-body">
-        <h1 class="card-title"></h1>
+        <h1 class="card-title">
+            @Html.DisplayFor(model => model.Participate_Phase)
+        </h1>
     </div>
     <div class="card-footer">
         <a href="#" class=" btn btn-danger">Edit</a>
