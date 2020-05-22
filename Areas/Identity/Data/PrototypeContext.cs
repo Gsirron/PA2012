@@ -18,6 +18,7 @@ namespace Prototype.Models
         }
 
         public DbSet<Participant> Participant { get; set; }
+        public DbSet<SiteData> SiteData { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
