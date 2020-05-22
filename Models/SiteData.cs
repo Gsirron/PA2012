@@ -10,7 +10,7 @@ namespace Prototype.Models
     {
 
         public int SiteDataId { get; set; }
-        [UrlAttribute]
+
         public string Website_Link { get; set; }
 
         public int Participate_Phase { get; set; }
