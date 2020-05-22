@@ -25,8 +25,6 @@ namespace Prototype.Areas.Admin.Controllers
         }
         // GET: SiteData
         
-        
-
         public async Task<IActionResult> Index()
         {
             

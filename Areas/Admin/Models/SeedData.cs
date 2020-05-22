@@ -29,7 +29,7 @@ namespace Prototype.Areas.Admin.Models
 
                     new SiteData()
                     {
-                        Website_Link = "www.https://surveyswesternsydney.au1.qualtrics.com",
+                        Website_Link = "https://surveyswesternsydney.au1.qualtrics.com",
                         Participate_Phase = 1,
                         Survey_ID = ""
                     });
