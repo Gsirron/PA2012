@@ -11,7 +11,8 @@ using Prototype.Models;
 
 namespace Prototype.Areas.Admin.Controllers
 
-{[Area("Admin")]
+{
+    [Area("Admin")]
 
     public class HomeController : Controller
     {

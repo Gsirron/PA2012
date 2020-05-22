@@ -34,7 +34,9 @@ namespace Prototype.Controllers
 
         public IActionResult Participate()
         {
-            ViewData["Message"] = "Application's Participate Page.";
+            ViewData["Message"] = "Participate";
+
+            ViewData["Website"] = "www.qualtrics.com";
 
             return View();
         }

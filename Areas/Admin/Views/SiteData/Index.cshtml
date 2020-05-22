@@ -1,0 +1,35 @@
+﻿
+@model Prototype.Models.SiteData
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card mb-3">
+    <div class="card-header">
+        Current Website Link
+    </div>
+    <div class="card-body">
+        <h1 class="card-title">
+            @Html.DisplayFor(model => model.Website_Link)
+        </h1>
+    </div>
+    <div class="card-footer">
+        <a href="#" class=" btn btn-danger">Edit</a>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-header">
+        Participate Phase
+    </div>
+    <div class="card-body">
+        <h1 class="card-title">
+            @Html.DisplayFor(model => model.Participate_Phase)
+        </h1>
+    </div>
+    <div class="card-footer">
+        <a href="#" class=" btn btn-danger">Edit</a>
+    </div>
+</div>
+

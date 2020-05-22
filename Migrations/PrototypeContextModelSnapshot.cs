@@ -161,11 +161,24 @@ namespace Prototype.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("Participant_Age")
+                        .HasColumnType("int");
+
                     b.Property<string>("Participant_Data")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Participant_Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Participant_Gender")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Participant_Group")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Participant_Phase")
+                        .HasColumnType("int");
 
                     b.HasKey("ParticipantId");
 
@@ -235,6 +248,27 @@ namespace Prototype.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("Prototype.Models.SiteData", b =>
+                {
+                    b.Property<int>("SiteDataId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Participate_Phase")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Survey_ID")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Website_Link")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("SiteDataId");
+
+                    b.ToTable("SiteData");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

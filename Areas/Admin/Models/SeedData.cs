@@ -15,42 +15,68 @@ namespace Prototype.Areas.Admin.Models
         public static void Initialize(IServiceProvider serviceProvider)
         {
 
-            using (var context = new PrototypeContext(
+            using var context = new PrototypeContext(
                 serviceProvider.GetRequiredService<
-                    DbContextOptions<PrototypeContext>>()))
+                    DbContextOptions<PrototypeContext>>());
+            
+            if (context.SiteData.Any())
             {
-                if(context.Participant.Any())
-                {
-                    return; // db has been seeded
-                }
+                return; // site data as been seeded
+            }
+            else
+            {
+                context.SiteData.AddRange(
 
-                context.Participant.AddRange(
-
-                    new Participant()
+                    new SiteData()
                     {
-                        
-                        Participant_Email = "Janedo@gmail.com",
-                        Participant_Data = "Participant Data"
-                    },
+                        Website_Link = "https://surveyswesternsydney.au1.qualtrics.com",
+                        Participate_Phase = 1,
+                        Survey_ID = ""
+                    });
 
-
-                    new Participant()
-                    {
-                        
-                        Participant_Email = "Janes.Bob@gmail.com",
-                        Participant_Data = "Participant Data"
-                    },
-
-                    new Participant()
-                    {
-                        
-                        Participant_Email = "Megan.Dale@gmail.com",
-                        Participant_Data = "Participant Data"
-                    }
-
-                    );
                 context.SaveChanges();
             }
+
+
+
+
+            if (context.Participant.Any())
+            {
+                return; // db has been seeded
+            }
+            else
+            {
+                context.Participant.AddRange(
+
+                new Participant()
+                {
+
+                    Participant_Email = "Janedo@gmail.com",
+                    Participant_Data = "Participant Data"
+                },
+
+
+                new Participant()
+                {
+
+                    Participant_Email = "Janes.Bob@gmail.com",
+                    Participant_Data = "Participant Data"
+                },
+
+                new Participant()
+                {
+
+                    Participant_Email = "Megan.Dale@gmail.com",
+                    Participant_Data = "Participant Data"
+                }
+
+                );
+
+                context.SaveChanges();
+            }
+
+            
+            
         }
     }
 }

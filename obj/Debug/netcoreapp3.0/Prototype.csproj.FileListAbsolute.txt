@@ -247,9 +247,6 @@ F:\Unistuff\PX\Project\Prototype\bin\Debug\netcoreapp3.0\runtimes\win-x86\native
 F:\Unistuff\PX\Project\Prototype\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 F:\Unistuff\PX\Project\Prototype\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 F:\Unistuff\PX\Project\Prototype\bin\Debug\netcoreapp3.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Prototype.csproj.CoreCompileInputs.cache
-F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Prototype.MvcApplicationPartsAssemblyInfo.cs
-F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Prototype.MvcApplicationPartsAssemblyInfo.cache
 F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Prototype.RazorAssemblyInfo.cache
 F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Prototype.RazorAssemblyInfo.cs
 F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Prototype.AssemblyInfoInputs.cache
@@ -321,7 +318,11 @@ F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_Coo
 F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Shared\Index.cshtml.g.cs
 F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
 F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Shared\_ViewStart.cshtml.g.cs
-F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Shared\ListUsers.cshtml.g.cs
 F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Shared\_ManageNav.cshtml.g.cs
 F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Shared\_ViewImports.cshtml.g.cs
 F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Shared\SiteContent.cshtml.g.cs
+F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Prototype.csproj.CoreCompileInputs.cache
+F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Prototype.MvcApplicationPartsAssemblyInfo.cs
+F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Prototype.MvcApplicationPartsAssemblyInfo.cache
+F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Razor\Areas\Admin\Views\Participant\ListUsers.cshtml.g.cs
+F:\Unistuff\PX\Project\Prototype\obj\Debug\netcoreapp3.0\Prototype.csprojAssemblyReference.cache

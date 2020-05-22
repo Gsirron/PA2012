@@ -1,6 +1,8 @@
 ﻿
 @{
-    ViewData["Title"] = "Participate";
+
+    var website = ViewData["Website"] as string;
+
 }
 
 <!DOCTYPE html>
@@ -68,7 +70,7 @@
         </div>
     </div>
     <div id="welcome" class="text-center">
-        <h1 style="color: #800000;" class="display-4">@ViewData["Title"]</h1>
+        <h1 style="color: #800000;" class="display-4">@ViewData["Message"]</h1>
     </div>
     <div id="border">
         <img src="~/images/participate.jpg" height="400" class="img-responsive" />
@@ -88,8 +90,8 @@
         </div>
         <br>
         <div style="margin-bottom: 30px;">
-            <button onclick=" window.open('https://www.limesurvey.org/','_blank')">Participate in Phase 1</button>
-            <button onclick=" window.open('https://www.limesurvey.org/','_blank')">Participate in Phase 2</button>
+            <button onclick=" window.open=('www.google.com' ,'_blank')">Participate in Phase 1</button>
+            <button onclick=" window.open(@ViewData["Website"],'_blank')">Participate in Phase 2</button>
         </div>
         <hr style="margin-left: 150px; margin-right: 150px; margin-top: 30px; margin-bottom: 30px;">
 
