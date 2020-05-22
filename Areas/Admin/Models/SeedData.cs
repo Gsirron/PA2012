@@ -18,13 +18,35 @@ namespace Prototype.Areas.Admin.Models
             using var context = new PrototypeContext(
                 serviceProvider.GetRequiredService<
                     DbContextOptions<PrototypeContext>>());
+            
+            if (context.SiteData.Any())
+            {
+                return; // site data as been seeded
+            }
+            else
+            {
+                context.SiteData.AddRange(
+
+                    new SiteData()
+                    {
+                        Website_Link = "www.https://surveyswesternsydney.au1.qualtrics.com",
+                        Participate_Phase = 1,
+                        Survey_ID = ""
+                    });
+
+                context.SaveChanges();
+            }
+
+
+
 
             if (context.Participant.Any())
             {
                 return; // db has been seeded
             }
-
-            context.Participant.AddRange(
+            else
+            {
+                context.Participant.AddRange(
 
                 new Participant()
                 {
@@ -49,7 +71,12 @@ namespace Prototype.Areas.Admin.Models
                 }
 
                 );
-            context.SaveChanges();
+
+                context.SaveChanges();
+            }
+
+            
+            
         }
     }
 }
