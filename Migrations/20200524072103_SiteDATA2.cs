@@ -2,7 +2,7 @@
 
 namespace Prototype.Migrations
 {
-    public partial class secondsitedata2 : Migration
+    public partial class SiteDATA2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

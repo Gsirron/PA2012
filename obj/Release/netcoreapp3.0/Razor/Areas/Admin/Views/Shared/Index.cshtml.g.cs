@@ -41,6 +41,7 @@ using Prototype.Areas.Identity.Data;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d6de9d5724cd901180e4930072ce83af1f72a758", @"/Areas/Admin/Views/Shared/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"359a8a43dac507f326d6f68f1ee5b6e6968fb302", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e03d3c7377862f32a875004b8297c71fc40df92b", @"/Areas/Admin/Views/Shared/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Shared_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<PrototypeUser>>
     {
@@ -104,7 +105,7 @@ using Prototype.Areas.Identity.Data;
 #line hidden
 #nullable disable
             WriteLiteral("    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d6de9d5724cd901180e4930072ce83af1f72a7586231", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d6de9d5724cd901180e4930072ce83af1f72a7586407", async() => {
                 WriteLiteral("\r\n        Add New User\r\n    ");
             }
             );
@@ -153,7 +154,7 @@ else
 #line hidden
 #nullable disable
             WriteLiteral("    <div class=\"card\">\r\n        <div class=\" = \" card-header>\r\n            No Users Created Yet\r\n        </div>\r\n        <div class=\"card-body\">\r\n            <h5 class=\"card-title\">User the Button To Create a User</h5>\r\n        </div>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d6de9d5724cd901180e4930072ce83af1f72a7589159", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d6de9d5724cd901180e4930072ce83af1f72a7589335", async() => {
                 WriteLiteral("\r\n            Add New User\r\n        ");
             }
             );

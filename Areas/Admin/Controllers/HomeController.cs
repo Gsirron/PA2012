@@ -42,9 +42,6 @@ namespace Prototype.Areas.Admin.Controllers
             return View(users);
         }
 
-        public IActionResult SiteContent()
-        {
-            return View();
-        }
+       
     }
 }

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Prototype.Models.SiteData>
+@{
+
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<link href="~/css/toggle.css" rel="stylesheet" />
+<h2>Modify Site Content</h2>
+@foreach (var active in Model)
+{
+    @if (active.SiteData_Active == true)
+    {
+        @await Html.PartialAsync("_ActivePage", active)
+    }
+}
+<h3></h3>
+<br>
+<form asp-action="ChangePhase" method="post">
+    @foreach (var item in Model)
+    {
+        <div>
+            <input type="radio" name="id" id="id" value="@item.SiteDataId" />
+            <label for="phase1">@item.SiteData_Name</label>
+        </div>
+    }
+    <input type="submit" name="save" value="save" />
+
+</form>

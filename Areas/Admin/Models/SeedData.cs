@@ -27,12 +27,33 @@ namespace Prototype.Areas.Admin.Models
             {
                 context.SiteData.AddRange(
 
+
                     new SiteData()
                     {
-                        Website_Link = "https://surveyswesternsydney.au1.qualtrics.com",
-                        Participate_Phase = 1,
-                        Survey_ID = ""
-                    });
+                        SiteData_Link = "https://surveyswesternsydney.au1.qualtrics.com",
+                        SiteData_Name = "Phase 1",
+
+                    },
+                    new SiteData()
+                    {
+                        SiteData_Link = "https://surveyswesternsydney.au1.qualtrics.com",
+                        SiteData_Name = "Phase 2 (Pre-Test)",
+
+                    }
+                    ,new SiteData()
+                    {
+                        SiteData_Link = "https://surveyswesternsydney.au1.qualtrics.com",
+                        SiteData_Name = "Phase 2(Post-Test)",
+
+                    }
+                    ,new SiteData()
+                    {
+                        SiteData_Link = "https://surveyswesternsydney.au1.qualtrics.com",
+                        SiteData_Name = "Closed",
+
+                    }
+                    
+                    );
 
                 context.SaveChanges();
             }
@@ -52,7 +73,7 @@ namespace Prototype.Areas.Admin.Models
                 {
 
                     Participant_Email = "Janedo@gmail.com",
-                    Participant_Data = "Participant Data"
+                    Participant_Phase = 1
                 },
 
 
@@ -60,14 +81,14 @@ namespace Prototype.Areas.Admin.Models
                 {
 
                     Participant_Email = "Janes.Bob@gmail.com",
-                    Participant_Data = "Participant Data"
+                    Participant_Phase = 2
                 },
 
                 new Participant()
                 {
 
                     Participant_Email = "Megan.Dale@gmail.com",
-                    Participant_Data = "Participant Data"
+                    Participant_Phase = 1
                 }
 
                 );

@@ -10,8 +10,8 @@ using Prototype.Models;
 namespace Prototype.Migrations
 {
     [DbContext(typeof(PrototypeContext))]
-    [Migration("20200522113011_secondsitedata")]
-    partial class secondsitedata
+    [Migration("20200524090853_ParticipantUpdate")]
+    partial class ParticipantUpdate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -166,9 +166,6 @@ namespace Prototype.Migrations
                     b.Property<int>("Participant_Age")
                         .HasColumnType("int");
 
-                    b.Property<string>("Participant_Data")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Participant_Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -181,6 +178,9 @@ namespace Prototype.Migrations
 
                     b.Property<int>("Participant_Phase")
                         .HasColumnType("int");
+
+                    b.Property<string>("Participant_ResponseId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ParticipantId");
 
@@ -259,13 +259,13 @@ namespace Prototype.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Participate_Phase")
-                        .HasColumnType("int");
+                    b.Property<bool>("SiteData_Active")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("Survey_ID")
+                    b.Property<string>("SiteData_Link")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Website_Link")
+                    b.Property<string>("SiteData_Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("SiteDataId");

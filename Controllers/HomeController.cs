@@ -17,7 +17,12 @@ namespace Prototype.Controllers
         {
             _logger = logger;
         }
+        public IActionResult ParticipateClosed()
+        {
+            ViewData["Message"] = "Application's Participation Closed Page.";
 
+            return View();
+        }
         public IActionResult About()
         {
             ViewData["Message"] = "Impact on Undergraduate Nursing Students' Digital Literacy and Health Informatics Competencies Post Implementation of a Nursing Informatics Module.";
@@ -57,7 +62,40 @@ namespace Prototype.Controllers
         {
             return View();
         }
+        public IActionResult Phase1Student()
+        {
+            ViewData["Message"] = "Application's Phase 1 as Student Participate Page.";
 
+            return View();
+        }
+
+        public IActionResult Phase1Educationalist()
+        {
+            ViewData["Message"] = "Application's Phase 1 as Educator Participate Page.";
+
+            return View();
+        }
+
+        public IActionResult Phase1Academic()
+        {
+            ViewData["Message"] = "Application's Phase 1 as Professional Participate Page.";
+
+            return View();
+        }
+        [HttpGet]
+        public IActionResult Phase2PreTest()
+        {
+            ViewData["Message"] = "Application's Phase 2 Pre-Test Participate Page.";
+
+            return View();
+        }
+
+        public IActionResult Phase2PostTest()
+        {
+            ViewData["Message"] = "Application's Phase 2 Post-Test Participate Page.";
+
+            return View();
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
