@@ -1,63 +1,16 @@
 ﻿
-<h1>Index</h1>
+
+@{
+
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
 
 
-<div class="card mb-3">
-    <div class=" = " card-header>
-        
-    </div>
-    <div class="card-body">
-        <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-primary mb-3" style="width:auto">
-            Add New User
-        </a>
-    </div>
-    <div class="card-footer">
-        <a href="#" class=" = " btn btn-danger">Edit</a> |
-        <a href="#" class=" = " btn btn-danger">Delete</a>
-    </div>
-</div>
+<h2>@ViewData["Title"]</h2>
 
-<div class="card mb-3">
-    <div class=" = " card-header>
-
-    </div>
-    <div class="card-body">
-        <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-primary mb-3" style="width:auto">
-            Add New User
-        </a>
-    </div>
-    <div class="card-footer">
-        <a href="#" class=" = " btn btn-danger">Edit</a> |
-        <a href="#" class=" = " btn btn-danger">Delete</a>
-    </div>
-</div>
-
-<div class="card mb-3">
-    <div class=" = " card-header>
-
-    </div>
-    <div class="card-body">
-        <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-primary mb-3" style="width:auto">
-            Add New User
-        </a>
-    </div>
-    <div class="card-footer">
-        <a href="#" class=" = " btn btn-danger">Edit</a> |
-        <a href="#" class=" = " btn btn-danger">Delete</a>
-    </div>
-</div>
-
-<div class="card mb-3">
-    <div class=" = " card-header>
-
-    </div>
-    <div class="card-body">
-        <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-primary mb-3" style="width:auto">
-            Add New User
-        </a>
-    </div>
-    <div class="card-footer">
-        <a href="#" class=" = " btn btn-danger">Edit</a> |
-        <a href="#" class=" = " btn btn-danger">Delete</a>
-    </div>
+<div>
+    <a asp-controller="Participant" asp-action="ListUsers" class=" btn btn-danger"> View All Participants</a>
+    <a asp-controller="Participant" asp-action="ListAllUsers" class=" btn btn-danger"> View P1 Participants</a>
+    <a asp-controller="Participate" asp-action="ListUsers" class=" btn btn-danger"> View all Phase 2 Participant</a>
+    <a asp-controller="Participate" asp-action="ListUsers" class=" btn btn-danger"> View Phase 2 B</a>
 </div>

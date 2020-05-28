@@ -27,6 +27,13 @@ using Prototype.Models;
 #line hidden
 #nullable disable
 #nullable restore
+#line 4 "F:\Unistuff\PX\Project\Prototype\Areas\Admin\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Authorization;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 1 "F:\Unistuff\PX\Project\Prototype\Areas\Admin\Views\SiteData\_Layout.cshtml"
 using System.Web.Mvc;
 
@@ -34,7 +41,7 @@ using System.Web.Mvc;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"678f19b6b7c47b887f3a6afc595c45b68d37f898", @"/Areas/Admin/Views/SiteData/_Layout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"359a8a43dac507f326d6f68f1ee5b6e6968fb302", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a285dd65e684806d857970f39ee2bf05b1dcc282", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_SiteData__Layout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

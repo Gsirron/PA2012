@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Prototype.Models;
@@ -28,6 +29,17 @@ namespace Prototype.Controllers
             ViewData["Message"] = "Impact on Undergraduate Nursing Students' Digital Literacy and Health Informatics Competencies Post Implementation of a Nursing Informatics Module.";
 
             return View();
+        }
+
+        public IActionResult Test(IFormCollection Form)
+        {
+            if(Form["validation"] == "no")
+            {
+                return RedirectToAction(nameof(About));
+            }
+
+
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Researcher() 

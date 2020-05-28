@@ -17,9 +17,9 @@ body {
 
 p {
     text-align: center;
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-top: 30px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 3%;
 }
 
 #ac-wrapper {
@@ -30,11 +30,40 @@ p {
     height: 100%;
     background: rgba(255,255,255,.6);
     z-index: 1001;
+    overflow: auto;
+}
+
+#screen-questions {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,.6);
+    z-index: 1001;
+    overflow: auto;
 }
 
 #popup {
-    width: 1000px;
-    height: 865px;
+    width: 50%;
+    height: 93%;
+    background: #FFFFFF;
+    border: 5px solid #000;
+    border-radius: 15px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    box-shadow: #64686e 0px 0px 3px 3px;
+    -moz-box-shadow: #64686e 0px 0px 3px 3px;
+    -webkit-box-shadow: #64686e 0px 0px 3px 3px;
+    position: relative;
+    top: 6%;
+    left: 25%;
+    overflow: auto;
+}
+
+#screenquestions {
+    width: 50%;
+    height: 95%;
     background: #FFFFFF;
     border: 5px solid #000;
     border-radius: 25px;
@@ -44,6 +73,7 @@ p {
     -moz-box-shadow: #64686e 0px 0px 3px 3px;
     -webkit-box-shadow: #64686e 0px 0px 3px 3px;
     position: relative;
-    top: 60px;
-    left: 455px;
+    top: 3%;
+    left: 25%;
+    overflow: auto;
 }

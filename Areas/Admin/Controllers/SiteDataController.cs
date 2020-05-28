@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Policy;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Razor.Language;
@@ -14,6 +15,7 @@ using Prototype.Models;
 namespace Prototype.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class SiteDataController : Controller
     {
 
@@ -102,8 +104,6 @@ namespace Prototype.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangePhase(int id)
         {
-            
-
             var sitedata = await _context.SiteData.FindAsync(id);
 
             if (sitedata == null)

@@ -12,12 +12,12 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="SiteDataId" />
             <div class="form-group">
-                <label asp-for="SiteData_Link" class="control-label"></label>
+                <label asp-for="SiteData_Link" class="control-label">Website Link</label>
                 <input asp-for="SiteData_Link" class="form-control" />
                 <span asp-validation-for="SiteData_Link" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="SiteData_Name" class="control-label"></label>
+                <label asp-for="SiteData_Name" class="control-label">@Model.SiteData_Name</label>
                 <input asp-for="SiteData_Name" class="form-control" />
                 <span asp-validation-for="SiteData_Name" class="text-danger"></span>
             </div>

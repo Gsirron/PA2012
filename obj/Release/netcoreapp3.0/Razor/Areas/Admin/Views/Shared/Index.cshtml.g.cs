@@ -13,6 +13,13 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
+#line 4 "F:\Unistuff\PX\Project\Prototype\Areas\Admin\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Authorization;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 1 "F:\Unistuff\PX\Project\Prototype\Areas\Admin\Views\Shared\_ViewImports.cshtml"
 using Prototype;
 
@@ -41,7 +48,7 @@ using Prototype.Areas.Identity.Data;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d6de9d5724cd901180e4930072ce83af1f72a758", @"/Areas/Admin/Views/Shared/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"359a8a43dac507f326d6f68f1ee5b6e6968fb302", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a285dd65e684806d857970f39ee2bf05b1dcc282", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e03d3c7377862f32a875004b8297c71fc40df92b", @"/Areas/Admin/Views/Shared/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Shared_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<PrototypeUser>>
     {
@@ -105,7 +112,7 @@ using Prototype.Areas.Identity.Data;
 #line hidden
 #nullable disable
             WriteLiteral("    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d6de9d5724cd901180e4930072ce83af1f72a7586407", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d6de9d5724cd901180e4930072ce83af1f72a7586601", async() => {
                 WriteLiteral("\r\n        Add New User\r\n    ");
             }
             );
@@ -154,7 +161,7 @@ else
 #line hidden
 #nullable disable
             WriteLiteral("    <div class=\"card\">\r\n        <div class=\" = \" card-header>\r\n            No Users Created Yet\r\n        </div>\r\n        <div class=\"card-body\">\r\n            <h5 class=\"card-title\">User the Button To Create a User</h5>\r\n        </div>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d6de9d5724cd901180e4930072ce83af1f72a7589335", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d6de9d5724cd901180e4930072ce83af1f72a7589529", async() => {
                 WriteLiteral("\r\n            Add New User\r\n        ");
             }
             );

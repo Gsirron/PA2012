@@ -17,6 +17,8 @@ namespace Prototype.Models
 
         public bool SiteData_Active { get; set; } = false;
 
+        public int SiteData_Phase { get; set; }
+
 
     }
 }

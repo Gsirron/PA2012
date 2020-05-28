@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +14,7 @@ using Prototype.Models;
 namespace Prototype.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class ParticipantController : Controller
 
     {
@@ -30,10 +32,10 @@ namespace Prototype.Areas.Admin.Controllers
                                select m;
 
 
-            ViewData["Title"] = "Participants";
-
             return View(await participants.ToListAsync());
         }
+
+
         public ActionResult Index()
         {
             return View();

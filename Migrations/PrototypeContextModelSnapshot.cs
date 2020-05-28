@@ -266,6 +266,9 @@ namespace Prototype.Migrations
                     b.Property<string>("SiteData_Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("SiteData_Phase")
+                        .HasColumnType("int");
+
                     b.HasKey("SiteDataId");
 
                     b.ToTable("SiteData");

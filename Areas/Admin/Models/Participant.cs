@@ -19,10 +19,14 @@ namespace Prototype.Areas.Admin.Models
         public string Participant_Group { get; set; }
         
 
-        public string Participant_Gender { get; set; }
+        public string  Participant_Gender { get; set; }
         
         public int Participant_Age { get; set; }
 
         public string Participant_ResponseId { get; set; }
     }
+
+
+
+
 }

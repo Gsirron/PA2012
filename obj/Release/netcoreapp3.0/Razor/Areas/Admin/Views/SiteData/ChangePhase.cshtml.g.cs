@@ -26,8 +26,15 @@ using Prototype.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "F:\Unistuff\PX\Project\Prototype\Areas\Admin\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Authorization;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f9562b1786e6eadb4207d12febfc239c9f24dfc3", @"/Areas/Admin/Views/SiteData/ChangePhase.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"359a8a43dac507f326d6f68f1ee5b6e6968fb302", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a285dd65e684806d857970f39ee2bf05b1dcc282", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_SiteData_ChangePhase : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Prototype.Models.SiteData>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("href", new global::Microsoft.AspNetCore.Html.HtmlString("~/css/toggle.css"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -70,7 +77,7 @@ using Prototype.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f9562b1786e6eadb4207d12febfc239c9f24dfc35013", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f9562b1786e6eadb4207d12febfc239c9f24dfc35207", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -127,7 +134,7 @@ using Prototype.Models;
 #line hidden
 #nullable disable
             WriteLiteral("<h3></h3>\r\n<br>\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9562b1786e6eadb4207d12febfc239c9f24dfc37244", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9562b1786e6eadb4207d12febfc239c9f24dfc37438", async() => {
                 WriteLiteral("\r\n");
 #nullable restore
 #line 20 "F:\Unistuff\PX\Project\Prototype\Areas\Admin\Views\SiteData\ChangePhase.cshtml"

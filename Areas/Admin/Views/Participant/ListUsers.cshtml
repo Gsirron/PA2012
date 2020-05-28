@@ -19,7 +19,15 @@
             </th>
 
             <th>
-                Participant Data
+                Participant Phase
+            </th>
+
+            <th>
+                Participant Group
+            </th>
+
+            <th>
+                Participant ResponseID
             </th>
 
             <th></th>
@@ -29,19 +37,25 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Participant_Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Participant_Phase)
-                </td>
-                <td>
-                    <a asp-page="/Edit">Edit</a> |
-                    <a asp-page="/Details">Details</a> |
-                    <a asp-page="/Delete">Delete</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Participant_Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Participant_Phase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Participant_Group)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Participant_ResponseId)
+            </td>
+            <td>
+                <a asp-page="/Edit">Edit</a> |
+                <a asp-page="/Details">Details</a> |
+                <a asp-page="/Delete">Delete</a>
+            </td>
+        </tr>
         }
     </tbody>
     

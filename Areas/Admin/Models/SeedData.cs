@@ -29,27 +29,32 @@ namespace Prototype.Areas.Admin.Models
 
 
                     new SiteData()
-                    {
+                    {   
+                        SiteData_Phase = 1,
                         SiteData_Link = "https://surveyswesternsydney.au1.qualtrics.com",
                         SiteData_Name = "Phase 1",
 
                     },
                     new SiteData()
                     {
+                        SiteData_Phase = 2,
                         SiteData_Link = "https://surveyswesternsydney.au1.qualtrics.com",
                         SiteData_Name = "Phase 2 (Pre-Test)",
 
                     }
                     ,new SiteData()
                     {
+                        SiteData_Phase = 3,
                         SiteData_Link = "https://surveyswesternsydney.au1.qualtrics.com",
                         SiteData_Name = "Phase 2(Post-Test)",
 
                     }
                     ,new SiteData()
                     {
+                        SiteData_Phase = 4,
                         SiteData_Link = "https://surveyswesternsydney.au1.qualtrics.com",
                         SiteData_Name = "Closed",
+                        SiteData_Active = true,
 
                     }
                     
@@ -61,7 +66,7 @@ namespace Prototype.Areas.Admin.Models
 
 
 
-            if (context.Participant.Any())
+            /*if (context.Participant.Any())
             {
                 return; // db has been seeded
             }
@@ -94,7 +99,7 @@ namespace Prototype.Areas.Admin.Models
                 );
 
                 context.SaveChanges();
-            }
+            }*/
 
             
             
