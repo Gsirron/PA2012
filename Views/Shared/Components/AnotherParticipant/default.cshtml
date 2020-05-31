@@ -1,0 +1,74 @@
+﻿
+
+<form asp-controller="Home" asp-action="Test" style="text-align:left; margin-left:20%;" method="post">
+    <h5 style="margin-left:-2%;">Age</h5>
+    <input type="radio" id="ageGroup1" name="age" value="1" required>
+    <label for="ageGroup1">18-25</label><br>
+    <input type="radio" id="ageGroup2" name="age" value="2">
+    <label for="ageGroup2">26-40</label><br>
+    <input type="radio" id="ageGroup3" name="age" value="3">
+    <label for="ageGroup3">40+</label><br>
+
+    <h5 style="margin-left:-2%;">Gender</h5>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br>
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">Other</label><br>
+
+    <h5 style="margin-left:-2%;">Email</h5>
+    <label for="email">Email:</label>
+    <input size="30" type="email" id="email" name="email" required><br><br>
+
+    <br>
+    <h5 style="margin-left:-2%;">Miscellaneous</h5>
+    <p style="text-align:left; margin-left:0%; margin-bottom:0%; margin-top:1%;">Are you an undergraduate student currently enrolled in the Bachelor of Nursing Degree?</p>
+    <input style="margin-left:2%;" type="radio" id="validation" name="validation" value="yes" required>
+    <label for="courseYes">Yes</label><br>
+    <input style="margin-left:2%;" type="radio" id="validation" name="validation" value="no">
+    <label for="courseNo">No</label><br>
+    <p style="text-align:left; margin-left:0%; margin-bottom:0%; margin-top:1%;">Are you in your 1st or 2nd year of your Bachelor's degree?</p>
+    <input style="margin-left:2%;" type="radio" id="validation2" name="validation2" value="yes" required>
+    <label for="year1">1st Year</label><br>
+    <input style="margin-left:2%;" type="radio" id="validation2" name="validation2" value="no">
+    <label for="year2">2nd Year</label><br>
+
+    <p style="text-align:left; margin-left:0%; margin-bottom:0%; margin-top:1%;">Have you attended at least one clinical placement in a metropolitan hospital?</p>
+    <input style="margin-left:2%;" type="radio" id="validation3" name="validation3" value="yes" required>
+    <label for="miscYes">Yes</label><br>
+    <input style="margin-left:2%;" type="radio" id="validation3" name="validation3" value="no">
+    <label for="miscNo">No</label><br><br>
+
+    <p style="text-align:left; margin-left:0%; margin-bottom:0%; margin-top:1%;">Are you a full-time, part-time or sessional nursing/medical academic?</p>
+    <input style="margin-left:2%;" type="radio" id="validation" name="validation" value="yes" required>
+    <label for="courseYes">Yes</label><br>
+    <input style="margin-left:2%;" type="radio" id="validation" name="validation" value="no">
+    <label for="courseNo">No</label><br>
+    <p style="text-align:left; margin-left:0%; margin-bottom:0%; margin-top:1%;">Do you hold governance roles such as academic course advisor, unit or deputy unit coordinator and/or director of academic programs or simulation?</p>
+    <input style="margin-left:2%;" type="radio" id="validation2" name="validation2" value="yes" required>
+    <label for="year1">1st Year</label><br>
+    <input style="margin-left:2%;" type="radio" id="validation2" name="validation2" value="no">
+    <label for="year2">2nd Year</label><br>
+    <p style="text-align:left; margin-left:0%; margin-bottom:0%; margin-top:1%;">Are you a nursing academic who is also in the role of nursing unit manager, clinical nurse facilitator, specialist and/or educator?</p>
+    <input style="margin-left:2%;" type="radio" id="validation3" name="validation3" value="yes" required>
+    <label for="miscYes">Yes</label><br>
+    <input style="margin-left:2%;" type="radio" id="validation3" name="validation3" value="no">
+    <label for="miscNo">No</label><br><br>
+
+
+    <p style="text-align:left; margin-left:0%; margin-bottom:0%; margin-top:1%;">Have you overseen undergraduate nursing students whilst on clinical placement?</p>
+    <input style="margin-left:2%;" type="radio" id="validation" name="validation" value="yes" required>
+    <label for="misc1Yes">Yes</label><br>
+    <input style="margin-left:2%;" type="radio" id="validation" name="validation" value="no">
+    <label for="misc1No">No</label>
+    <p style="text-align:left; margin-left:0%; margin-bottom:0%; margin-top:1%;">Are you a nursing unit manager, clerical staff or other allied health care professional not in the nursing /medical field?</p>
+    <input style="margin-left:2%;" type="radio" id="validation2" name="validation2" value="yes" required>
+    <label for="misc2Yes">Yes</label><br>
+    <input style="margin-left:2%;" type="radio" id="validation2" name="validation2" value="no">
+    <label for="misc2No">No</label><br><br>
+
+
+    <input style="margin-left:25%" type="submit" name="proceed" value="Proceed" />
+    <input type="reset" name="cancel" value="Cancel" onClick="ScreenQuestions('hide')" />
+</form>

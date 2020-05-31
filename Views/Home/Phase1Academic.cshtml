@@ -81,13 +81,15 @@
                 <p style="text-align:left; font-family: Verdana, sans-serif; font-size: 15px; color: #808080;">
                     *Please fill in the following details before continuing.
                 </p>
-                <form asp-action="Create" style="text-align:left; margin-left:20%;">
+                <form asp-action="CreateNewParticipant" style="text-align:left; margin-left:20%;">
+                    <input type="hidden" id="group" name="group" value="p1a" />"
+                    <input type="hidden" id="phase" name="phase" value="1" />"
                     <h5 style="margin-left:-2%;">Age</h5>
-                    <input type="radio" id="ageGroup1" name="age" value="ageGroup1" required>
-                    <label for="group1">18-25</label><br>
-                    <input type="radio" id="ageGroup2" name="age" value="ageGroup2">
+                    <input type="radio" id="ageGroup1" name="age" value="1" required>
+                    <label for="ageGroup1">18-25</label><br>
+                    <input type="radio" id="ageGroup2" name="age" value="2">
                     <label for="ageGroup2">26-40</label><br>
-                    <input type="radio" id="ageGroup3" name="age" value="ageGroup3">
+                    <input type="radio" id="ageGroup3" name="age" value="3">
                     <label for="ageGroup3">40+</label><br>
 
                     <h5 style="margin-left:-2%;">Gender</h5>
@@ -100,8 +102,7 @@
 
                     <h5 style="margin-left:-2%;">Email</h5>
                     <label for="email">Email:</label>
-                    <input size="30" type="email" id="email" name="email" required>
-                    <br><br>
+                    <input size="30" type="email" id="email" name="email" required><br><br>
 
                     <p style="text-align:left; margin-left:0%; margin-bottom:0%; margin-top:1%;">Are you a full-time, part-time or sessional nursing/medical academic?</p>
                     <input style="margin-left:2%;" type="radio" id="validation" name="validation" value="yes" required>

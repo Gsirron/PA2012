@@ -223,5 +223,7 @@ F:\Unistuff\PX\Project\Prototype\obj\Release\netcoreapp3.0\Razor\Views\Home\Phas
 F:\Unistuff\PX\Project\Prototype\obj\Release\netcoreapp3.0\Razor\Views\Home\Phase2PreTest.cshtml.g.cs
 F:\Unistuff\PX\Project\Prototype\obj\Release\netcoreapp3.0\Razor\Areas\Admin\Views\SiteData\_ActivePage.cshtml.g.cs
 F:\Unistuff\PX\Project\Prototype\obj\Release\netcoreapp3.0\Razor\Views\Home\_ParticipantForm.cshtml.g.cs
-F:\Unistuff\PX\Project\Prototype\obj\Release\netcoreapp3.0\Prototype.csprojAssemblyReference.cache
 F:\Unistuff\PX\Project\Prototype\obj\Release\netcoreapp3.0\Razor\Views\Shared\Components\Participant\default.cshtml.g.cs
+F:\Unistuff\PX\Project\Prototype\obj\Release\netcoreapp3.0\Razor\Views\Shared\Components\AnotherParticipant\default.cshtml.g.cs
+F:\Unistuff\PX\Project\Prototype\obj\Release\netcoreapp3.0\Razor\Views\Home\ValidFail.cshtml.g.cs
+F:\Unistuff\PX\Project\Prototype\obj\Release\netcoreapp3.0\Razor\Views\Home\ViewWebsite.cshtml.g.cs

@@ -80,7 +80,7 @@
                 <p style="text-align:left; font-family: Verdana, sans-serif; font-size: 15px; color: #808080;">
                     *Please fill in the following details before continuing.
                 </p>
-                <partial name ="_ParticipantForm" />
+                @await Component.InvokeAsync("AnotherParticipant")
             </center>
         </div>
     </div>
