@@ -87,11 +87,80 @@ namespace Prototype.Controllers
             return View();
         }
         
+        public bool ValidateForm(IFormCollection Form)
+
+        {
+            if (!String.IsNullOrEmpty(Form["validation3"]))
+
+            {
+                if(Form["validation3"] == "no")
+                {
+                    return false;
+                }
+            }
+            if (Form["validation"] == "no" || Form["validation2"] == "no")
+            {
+                return false;
+            }
+            return true;
+        }
+        public async Task<string> Randomisation(IFormCollection Form)
+        {
+            int countA = 0;
+            int countB = 0;
+
+            string gender = Form["gender"];
+            int age = int.Parse(Form["age"]);
+            string group = null;
+
+            foreach (var number in _context.Participant) //count number of same type participant in each group
+            {
+                if (number.Participant_Age == age && number.Participant_Gender == gender && number.Participant_Group == "A")
+                {
+                    countA = countA + 1;
+                }
+                else if (number.Participant_Age == age && number.Participant_Gender == gender && number.Participant_Group == "B")
+                {
+                    countB = countB + 1;
+                }
+            }
+
+            if (countA == countB)
+            {
+                assignGroupRandomly();
+            }
+            else if (countA > countB)
+            {
+                group = "B";
+            }
+            else if (countB > countA)
+            {
+                group = "A";
+            }
+
+            void assignGroupRandomly()
+            {
+                Random random = new Random(); //Generate random number
+                int randomNumber = random.Next(0, 2); //Range of random number from 0 to 1
+
+                if (randomNumber == 0)
+                {
+                    group = "A";
+                }
+                else
+                {
+                    group = "B";
+                }
+            }
+
+            return group;
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> CreateNewParticipant(IFormCollection Form)
         {
-            if (Form["validation"] == "no" ||  Form["validation2"] == "no")
+            if (ValidateForm(Form) == false)
                 {
                     return RedirectToAction("ValidFail","Home",new {fail =  "FAILED ELIGIBLE" });
                 }
@@ -101,7 +170,17 @@ namespace Prototype.Controllers
             participant.Participant_Gender = Form["gender"];
             participant.Participant_Age = int.Parse(Form["age"]);
             participant.Participant_Phase = int.Parse(Form["phase"]);
-            participant.Participant_Group = Form["group"];
+           
+            if(Form["group"] == "p2pre")
+            {
+                var group =await Randomisation(Form);
+                participant.Participant_Group = group;
+            }
+            else
+            {
+                participant.Participant_Group = Form["group"];
+
+            }
 
             if (!ParticipantExists(participant))
             {
@@ -125,9 +204,11 @@ namespace Prototype.Controllers
             return View();
         }
 
-        public IActionResult Index()
+        public async Task <IActionResult>Index()
         {
-            return View();
+            var sitedata = await _context.SiteData.FirstOrDefaultAsync(x => x.SiteData_Active == true);
+
+            return View(sitedata);
         }
 
         public IActionResult Privacy()

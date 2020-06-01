@@ -1,0 +1,46 @@
+﻿@model Prototype.Areas.Admin.Models.Participant
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "_Layout.cshtml";
+}
+
+    <h1>Details</h1>
+
+    <div>
+        <h4>Movie</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Participant Email
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Participant_Email)
+            </dd>
+            <dt class="col-sm-2">
+                Participant Phase
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Participant_Phase)
+            </dd>
+            <dt class="col-sm-2">
+                Participant Group
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Participant_Group)
+            </dd>
+            <dt class="col-sm-2">
+                Participant ResponseID
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Participant_ResponseId)
+            </dd>
+        </dl>
+
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model.ParticipantId">Edit</a> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+        
+
+    </div>

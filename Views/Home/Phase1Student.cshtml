@@ -80,8 +80,12 @@
                 <p style="text-align:left; font-family: Verdana, sans-serif; font-size: 15px; color: #808080;">
                     *Please fill in the following details before continuing.
                 </p>
-                <form style="text-align:left; margin-left:20%;">
+                <form asp-action="CreateNewParticipant" style="text-align:left; margin-left:20%;">
                     <h5 style="margin-left:-2%;">Age</h5>
+
+                    <input type="hidden" id="group" name="group" value="p1s" />
+                    <input type="hidden" id="phase" name="phase" value="1" />
+
                     <input type="radio" id="ageGroup1" name="age" value="1" required>
                     <label for="ageGroup1">18-25</label><br>
                     <input type="radio" id="ageGroup2" name="age" value="2">
@@ -102,11 +106,21 @@
                     <input size="30" type="email" id="email" name="email" required><br><br>
 
                     <h5 style="margin-left:-2%;">Miscellaneous</h5>
-                    <p style="text-align:left; margin-left:0%; margin-bottom:0%; margin-top:1%;">Have you attended at least one clinical placement in a metropolitan hospital?</p>
-                    <input style="margin-left:2%;" type="radio" id="miscYes" name="miscQuestion" value="miscYes" required>
-                    <label for="miscYes">Yes</label><br>
-                    <input style="margin-left:2%;" type="radio" id="miscNo" name="miscQuestion" value="miscNo">
-                    <label for="miscNo">No</label><br><br>
+                    <p style="text-align:left; margin-left:0%; margin-bottom:0%; margin-top:1%;">
+                        Are you a 3rd undergraduate nursing students currently enrolled in Bachelor of Nursing Degree?
+                    </p>
+                    <input style="margin-left:2%;" type="radio" id="validation" name="validation" value="yes" required>
+                    <label for="courseYes">Yes</label><br>
+                    <input style="margin-left:2%;" type="radio" id="validation" name="validation" value="no">
+                    <label for="courseNo">No</label><br>
+
+                    <p style="text-align:left; margin-left:0%; margin-bottom:0%; margin-top:1%;">
+                        Have you attended at least one clinical placement in a metropolitan hospital?
+                    </p>
+                    <input style="margin-left:2%;" type="radio" id="validation2" name="validation2" value="yes" required>
+                    <label for="misc2Yes">Yes</label><br>
+                    <input style="margin-left:2%;" type="radio" id="validation2" name="validation2" value="no">
+                    <label for="misc2No">No</label><br><br>
 
                     <input style="margin-left:25%" type="submit" name="proceed" value="Proceed" />
                     <input type="reset" name="cancel" value="Cancel" onClick="ScreenQuestions('hide')" />

@@ -1,16 +1,4 @@
-﻿
+﻿@{
+    Layout = "_Layout.cshtml";
 
-@{
-
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-
-
-<h2>@ViewData["Title"]</h2>
-
-<div>
-    <a asp-controller="Participant" asp-action="ListUsers" class=" btn btn-danger"> View All Participants</a>
-    <a asp-controller="Participant" asp-action="ListAllUsers" class=" btn btn-danger"> View P1 Participants</a>
-    <a asp-controller="Participate" asp-action="ListUsers" class=" btn btn-danger"> View all Phase 2 Participant</a>
-    <a asp-controller="Participate" asp-action="ListUsers" class=" btn btn-danger"> View Phase 2 B</a>
-</div>

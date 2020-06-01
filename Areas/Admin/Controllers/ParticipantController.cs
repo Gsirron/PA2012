@@ -26,15 +26,67 @@ namespace Prototype.Areas.Admin.Controllers
         }
         // GET: Participant
 
-        public async Task<IActionResult> ListUsers()
+        public async Task<IActionResult> ListUsers(int? phase)
+        {
+            ViewData["Title"] = "Viewing All Participants";
+
+            var participants = from m in _context.Participant
+                               select m;
+            if(phase == 1)
+            {
+                ViewData["Title"] = "Viewing All P1 Participants";
+                participants = participants.Where(s => s.Participant_Phase == 1);
+            }
+
+            else if(phase == 2)
+            {
+                ViewData["Title"] = "Viewing All P2 Participants";
+                participants = participants.Where(s => s.Participant_Phase == 2);
+            }
+            else if(phase == 3)
+            {
+                ViewData["Title"] = "Viewing All P2-A Participants";
+                participants = participants.Where(s => s.Participant_Phase == 2 && s.Participant_Group == "A");
+            }
+            else if(phase == 4)
+            {
+                ViewData["Title"] = "Viewing All P2-B Participants";
+                participants = participants.Where(s => s.Participant_Phase == 2 && s.Participant_Group == "B");
+            }
+
+            return View(await participants.ToListAsync());
+        }
+        
+        public async Task <IActionResult> ListP1Users()
+        {
+            return RedirectToAction("ListUsers", new { phase = 1 });
+        }
+
+        public async Task<IActionResult> ListP2Users()
+        {
+            return RedirectToAction("ListUsers", new { phase = 2 });
+        }
+
+        public async Task<IActionResult> ListP2AUsers()
+        {
+            return RedirectToAction("ListUsers", new { phase = 3 });
+        }
+
+        public async Task<IActionResult> ListP2BUsers()
+        {
+            return RedirectToAction("ListUsers", new { phase = 4 });
+        }
+
+
+        public async Task<IActionResult> ListP2Usersz()
         {
             var participants = from m in _context.Participant
                                select m;
 
+            participants = participants.Where(s => s.Participant_Phase == 2);
 
-            return View(await participants.ToListAsync());
+            return View("ListUsers", await participants.ToListAsync());
         }
-
 
         public ActionResult Index()
         {
@@ -42,18 +94,32 @@ namespace Prototype.Areas.Admin.Controllers
         }
 
         // GET: Participant/Details/5
-        public ActionResult Details(int id)
+        public async Task<IActionResult> Details(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var participant = await _context.Participant
+                .FirstOrDefaultAsync(m => m.ParticipantId == id);
+            if (participant == null)
+            {
+                return NotFound();
+            }
+
+            return View(participant);
         }
 
         // GET: Participant/Create
-        public ActionResult Create()
+        
+        public IActionResult Create()
         {
             return View();
         }
 
         // POST: Participant/Create
+        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -71,42 +137,92 @@ namespace Prototype.Areas.Admin.Controllers
         }
 
         // GET: Participant/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var participant = await _context.Participant
+                .FirstOrDefaultAsync(m => m.ParticipantId == id);
+            if (participant == null)
+            {
+                return NotFound();
+            }
+
+            return View(participant);
         }
 
         // POST: Participant/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<ActionResult> Edit(int id, Participant participant)
         {
-            try
+            if (id != participant.ParticipantId)
             {
-                // TODO: Add update logic here
+                return NotFound();
+            }
+            var participant2 = await _context.Participant.FindAsync(id);
 
+            if (ModelState.IsValid)
+            {
+                participant2.Participant_Email = participant.Participant_Email;
+                participant2.Participant_Group = participant.Participant_Group;
+                participant2.Participant_Phase = participant.Participant_Phase;
+                participant2.Participant_ResponseId = participant.Participant_ResponseId;
+
+                try
+                {
+                    _context.Update(participant2);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ParticipantExists(participant.ParticipantId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
                 return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
+            }
+            return View(participant2);
+        }
         // GET: Participant/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var participant = await _context.Participant
+                .FirstOrDefaultAsync(m => m.ParticipantId == id);
+            if(participant == null)
+            {
+                return NotFound();
+            }
+
+            return View(participant);
         }
 
         // POST: Participant/Delete/5
-        [HttpPost]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            var participant = await _context.Participant.FindAsync(id);
+            
+
             try
             {
-                // TODO: Add delete logic here
+                _context.Participant.Remove(participant);
+                await _context.SaveChangesAsync();
 
                 return RedirectToAction(nameof(Index));
             }
@@ -114,6 +230,11 @@ namespace Prototype.Areas.Admin.Controllers
             {
                 return View();
             }
+        }
+
+        private bool ParticipantExists(int id)
+        {
+                return _context.Participant.Any(e => e.ParticipantId == id);
         }
     }
 }

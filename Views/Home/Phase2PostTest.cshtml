@@ -80,7 +80,10 @@
                 <p style="text-align:left; font-family: Verdana, sans-serif; font-size: 15px; color: #808080;">
                     *Please fill in the following details before continuing.
                 </p>
-                <form style="text-align:left; margin-left:20%;">
+                <form asp-action="CreateNewParticipant" style="text-align:left; margin-left:20%;">
+
+                    <input type="hidden" id="phase" name="phase" value="2" />
+                    <input type="hidden" id="group" name="group" value="p2post" />
                     <h5 style="margin-left:-2%;">Age</h5>
                     <input type="radio" id="ageGroup1" name="age" value="1" required>
                     <label for="ageGroup1">18-25</label><br>
@@ -105,14 +108,14 @@
                     <h5 style="margin-left:-2%;">Miscellaneous</h5>
                     <p style="text-align:left; margin-left:0%; margin-bottom:0%; margin-top:1%;">Are you an undergraduate student currently enrolled in the Bachelor of Nursing Degree?</p>
                     <input style="margin-left:2%;" type="radio" id="validation" name="validation" value="yes" required>
-                    <label for="courseYes">Yes</label><br>
+                    <label for="validation">Yes</label><br>
                     <input style="margin-left:2%;" type="radio" id="validation" name="validation" value="no">
-                    <label for="courseNo">No</label><br>
+                    <label for="validation">No</label><br>
                     <p style="text-align:left; margin-left:0%; margin-bottom:0%; margin-top:1%;">Are you in your 1st or 2nd year of your Bachelor's degree?</p>
                     <input style="margin-left:2%;" type="radio" id="validation2" name="validation2" value="yes" required>
-                    <label for="year1">1st Year</label><br>
+                    <label for="validation2">1st Year</label><br>
                     <input style="margin-left:2%;" type="radio" id="validation2" name="validation2" value="no">
-                    <label for="year2">2nd Year</label><br>
+                    <label for="validation2">2nd Year</label><br>
 
                     <input style="margin-left:25%" type="submit" name="proceed" value="Proceed" />
                     <input type="reset" name="cancel" value="Cancel" onClick="ScreenQuestions('hide')" />

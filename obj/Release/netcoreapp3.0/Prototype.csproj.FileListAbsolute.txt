@@ -227,3 +227,8 @@ F:\Unistuff\PX\Project\Prototype\obj\Release\netcoreapp3.0\Razor\Views\Shared\Co
 F:\Unistuff\PX\Project\Prototype\obj\Release\netcoreapp3.0\Razor\Views\Shared\Components\AnotherParticipant\default.cshtml.g.cs
 F:\Unistuff\PX\Project\Prototype\obj\Release\netcoreapp3.0\Razor\Views\Home\ValidFail.cshtml.g.cs
 F:\Unistuff\PX\Project\Prototype\obj\Release\netcoreapp3.0\Razor\Views\Home\ViewWebsite.cshtml.g.cs
+F:\Unistuff\PX\Project\Prototype\obj\Release\netcoreapp3.0\Razor\Areas\Admin\Views\Participant\Delete.cshtml.g.cs
+F:\Unistuff\PX\Project\Prototype\obj\Release\netcoreapp3.0\Razor\Areas\Admin\Views\Participant\Details.cshtml.g.cs
+F:\Unistuff\PX\Project\Prototype\obj\Release\netcoreapp3.0\Razor\Areas\Admin\Views\Participant\Edit.cshtml.g.cs
+F:\Unistuff\PX\Project\Prototype\obj\Release\netcoreapp3.0\Prototype.csprojAssemblyReference.cache
+F:\Unistuff\PX\Project\Prototype\obj\Release\netcoreapp3.0\Razor\Areas\Admin\Views\Participant\_Layout.cshtml.g.cs
