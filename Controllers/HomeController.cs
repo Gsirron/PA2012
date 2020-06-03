@@ -78,12 +78,13 @@ namespace Prototype.Controllers
             return View();
         }
 
-        public async Task<IActionResult> ViewWebsite()
+        public async Task<IActionResult> ViewWebsite(int userId)
         {
             var sitedata = await _context.SiteData.FirstOrDefaultAsync(x => x.SiteData_Active == true);
+            var particpant = await _context.Participant.FirstOrDefaultAsync(x => x.ParticipantId == userId);
 
             ViewData["website"] = sitedata.SiteData_Link;
-
+            ViewData["websiteLink"] = ViewData["website"] +"?UserId="+ userId+ "&UserEmail="+ particpant.Participant_Email;
             return View();
         }
         
@@ -112,6 +113,8 @@ namespace Prototype.Controllers
             string gender = Form["gender"];
             int age = int.Parse(Form["age"]);
             string group = null;
+
+            
 
             foreach (var number in _context.Participant) //count number of same type participant in each group
             {
@@ -173,7 +176,7 @@ namespace Prototype.Controllers
            
             if(Form["group"] == "p2pre")
             {
-                var group =await Randomisation(Form);
+                var group = await Randomisation(Form);
                 participant.Participant_Group = group;
             }
             else
@@ -186,7 +189,8 @@ namespace Prototype.Controllers
             {
                 _context.Add(participant);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(ViewWebsite));
+                var userId = participant.ParticipantId;
+                return RedirectToAction("ViewWebsite",new { userId });
             }
             return RedirectToAction("ValidFail", "Home", new { fail = "Already taken Survey" });
 

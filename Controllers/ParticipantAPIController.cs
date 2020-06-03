@@ -29,22 +29,53 @@ namespace Prototype.Controllers
             return await _context.Participant.ToListAsync();
         }
 
-       
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Participant>> GetParticipant(int id)
+        {
+            var participant = await _context.Participant.FindAsync(id);
 
-        /*  public async Task<ActionResult<IEnumerable<Participant>>> AddParticipantResponse(String email)
-         {
-              if (String.IsNullOrEmpty(email))
-              {
-                  return BadRequest();
-              }
+            if (participant == null)
+            {
+                return NotFound();
+            }
 
-              //var Participant =await _context.Participant.FindAsync(email);
+            return participant;
+        }
 
-             // if 
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateSurveyResponse(int id,Participant participant)
+        {
+            if(id !=participant.ParticipantId)
+            {
+                return BadRequest();
+            }
 
-              return
+            _context.Attach(participant);
 
-          }*/
+            _context.Entry(participant).Property("Participant_ResponseId").IsModified = true;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if(!ParticiapntItemExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return NoContent();
+        }
+
+        private bool ParticiapntItemExists(long id)
+        {
+            return _context.Participant.Any(e => e.ParticipantId == id);
+        }
     }
 
 
