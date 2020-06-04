@@ -34,9 +34,9 @@
             <th></th>
         </tr>
     </thead>
-    @if (Model != null)
-    {
-        <tbody>
+    <tbody>
+        @if (Model.Any())
+        {
             @foreach (var item in Model)
             {
                 <tr>
@@ -59,15 +59,18 @@
                     </td>
                 </tr>
             }
-        </tbody>
-    }
-    else
-    {
-        <div>
-            Nothing Found!
-        </div>
-    }
 
+        }
+        else
+        {
+        <tr>
+          <td>
+             Nothing Found!
+            </td>
+        </tr>
+                
+        }
 
-</table>
+    </tbody>
+    </table>
 <a asp-action="Index">Back to List</a>

@@ -46,13 +46,6 @@ namespace Prototype.Controllers
                 return BadRequest();
             }
 
-            var participant2 = await _context.Participant.FindAsync(id);
-
-            if (participant2 == null)
-            {
-                return NotFound();
-            }
-
             _context.Attach(participant);
 
             _context.Entry(participant).Property("Participant_ResponseId").IsModified = true;

@@ -114,7 +114,7 @@ namespace Prototype.Controllers
             int age = int.Parse(Form["age"]);
             string group = null;
 
-            
+            // this random function uses Covariate adaptive randomization to sort participants into grousp A and B
 
             foreach (var number in _context.Participant) //count number of same type participant in each group
             {
