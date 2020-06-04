@@ -23,11 +23,7 @@ namespace Prototype.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Participant>>> GetParticipant()
-        {
-            return await _context.Participant.ToListAsync();
-        }
+        
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Participant>> GetParticipant(int id)
