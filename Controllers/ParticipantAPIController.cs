@@ -23,20 +23,7 @@ namespace Prototype.Controllers
             _context = context;
         }
 
-        
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Participant>> GetParticipant(int id)
-        {
-            var participant = await _context.Participant.FindAsync(id);
-
-            if (participant == null)
-            {
-                return NotFound();
-            }
-
-            return participant;
-        }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateSurveyResponse(int id,Participant participant)

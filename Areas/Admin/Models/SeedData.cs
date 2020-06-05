@@ -62,45 +62,6 @@ namespace Prototype.Areas.Admin.Models
 
                 context.SaveChanges();
             }
-
-
-
-
-            /*if (context.Participant.Any())
-            {
-                return; // db has been seeded
-            }
-            else
-            {
-                context.Participant.AddRange(
-
-                new Participant()
-                {
-
-                    Participant_Email = "Janedo@gmail.com",
-                    Participant_Phase = 1
-                },
-
-
-                new Participant()
-                {
-
-                    Participant_Email = "Janes.Bob@gmail.com",
-                    Participant_Phase = 2
-                },
-
-                new Participant()
-                {
-
-                    Participant_Email = "Megan.Dale@gmail.com",
-                    Participant_Phase = 1
-                }
-
-                );
-
-                context.SaveChanges();
-            }*/
-
             
             
         }

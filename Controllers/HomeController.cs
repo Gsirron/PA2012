@@ -55,14 +55,7 @@ namespace Prototype.Controllers
             return View();
         }
 
-        public IActionResult Participate()
-        {
-            ViewData["Message"] = "Participate";
-
-            ViewData["Website"] = "www.qualtrics.com";
-
-            return View();
-        }
+        
 
         public IActionResult ValidFail(string fail = null)
         {   
@@ -77,7 +70,7 @@ namespace Prototype.Controllers
 
             return View();
         }
-
+        // This sends embedded data to 
         public async Task<IActionResult> ViewWebsite(int userId)
         {
             var sitedata = await _context.SiteData.FirstOrDefaultAsync(x => x.SiteData_Active == true);
