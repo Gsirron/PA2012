@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +14,7 @@ namespace Prototype.Areas.Admin.Controllers
 
 {
     [Area("Admin")]
-
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly PrototypeContext UserManager;
@@ -42,9 +43,6 @@ namespace Prototype.Areas.Admin.Controllers
             return View(users);
         }
 
-        public IActionResult SiteContent()
-        {
-            return View();
-        }
+       
     }
 }

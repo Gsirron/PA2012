@@ -1,35 +1,29 @@
 ﻿
-@model Prototype.Models.SiteData
-@{
-    ViewData["Title"] = "Index";
+@using Prototype.Models
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model IEnumerable<Prototype.Models.SiteData>
+@{ 
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
 }
 
-<div class="card mb-3">
-    <div class="card-header">
-        Current Website Link
-    </div>
-    <div class="card-body">
-        <h1 class="card-title">
-            @Html.DisplayFor(model => model.Website_Link)
-        </h1>
-    </div>
-    <div class="card-footer">
-        <a href="#" class=" btn btn-danger">Edit</a>
-    </div>
-</div>
 
-<div class="card mb-3">
-    <div class="card-header">
-        Participate Phase
-    </div>
-    <div class="card-body">
-        <h1 class="card-title">
-            @Html.DisplayFor(model => model.Participate_Phase)
-        </h1>
-    </div>
-    <div class="card-footer">
-        <a href="#" class=" btn btn-danger">Edit</a>
-    </div>
-</div>
 
+
+@foreach (var active in Model)
+{
+    @if (active.SiteData_Active == true)
+    {
+        @await Html.PartialAsync("_ActivePage", active)
+    }
+}
+
+<div>
+    @foreach (var item in Model)
+    {
+        <div>
+            <a asp-controller="SiteData" asp-action="Edit" asp-route-id="@item.SiteDataId" class=" btn btn-danger"> @Html.DisplayFor(modelItem => item.SiteData_Name)</a>
+        </div>
+    }
+</div>

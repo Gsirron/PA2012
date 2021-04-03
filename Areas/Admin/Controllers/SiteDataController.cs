@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Policy;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Razor.Language;
 using Microsoft.EntityFrameworkCore;
+using Prototype.Migrations;
 using Prototype.Models;
+
 
 namespace Prototype.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class SiteDataController : Controller
     {
 
@@ -24,19 +29,15 @@ namespace Prototype.Areas.Admin.Controllers
 
         }
         // GET: SiteData
-        
+
         public async Task<IActionResult> Index()
         {
-            
-            var SiteData = await _context.SiteData
-                .FirstOrDefaultAsync(m => m.SiteDataId == 1);
 
-            if(SiteData == null)
-            {
-                return NotFound();
-            }
-            
-            return View(SiteData);
+            var SiteData = from s in _context.SiteData
+                           select s;
+
+
+            return View(await SiteData.ToListAsync());
         }
         // GET: SiteData/Details/5
         public ActionResult Details(int id)
@@ -49,6 +50,90 @@ namespace Prototype.Areas.Admin.Controllers
         {
             return View();
         }
+
+        public async Task<IActionResult> ChangePhase()
+        {
+            var SiteData = from s in _context.SiteData
+                           select s;
+            
+            return View(await SiteData.ToListAsync());
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task ChangePhaseFalse()
+        {
+            var SiteData2 = from s in _context.SiteData
+                            select s;
+
+            SiteData2 = SiteData2.Where(s => s.SiteData_Active == true);
+
+            if (SiteData2 == null)
+            {
+                return;
+            }
+
+            foreach (var item in SiteData2)
+            {
+                item.SiteData_Active = false;
+            }
+
+            try
+            {
+                _context.UpdateRange(SiteData2);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!SiteDataExits(SiteData2))
+                {
+                    return;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return;
+           
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangePhase(int id)
+        {
+            var sitedata = await _context.SiteData.FindAsync(id);
+
+            if (sitedata == null)
+            {
+                return NotFound();
+            }
+            await ChangePhaseFalse();
+            sitedata.SiteData_Active = true;
+
+            try
+            {
+                _context.Update(sitedata);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                
+                if (!SiteDataExits(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return RedirectToAction(nameof(ChangePhase));
+        }
+        
 
         // POST: SiteData/Create
         [HttpPost]
@@ -68,26 +153,59 @@ namespace Prototype.Areas.Admin.Controllers
         }
 
         // GET: SiteData/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var SiteData = await _context.SiteData.FindAsync(id);
+
+            if(SiteData ==null)
+            {
+                return NotFound();
+            }
+
+            return View(SiteData);
         }
 
         // POST: SiteData/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Edit(int id,[Bind("SiteDataId", "SiteData_Name","SiteData_Link")]SiteData sitedata)
         {
-            try
+            if (id != sitedata.SiteDataId)
             {
-                // TODO: Add update logic here
+                return NotFound();
+            }
+            if (ModelState.IsValid)
+            {
+                var OldSiteData = await _context.SiteData.FindAsync(id);
 
-                return RedirectToAction(nameof(Index));
+                OldSiteData.SiteData_Link = sitedata.SiteData_Link;
+                OldSiteData.SiteData_Name = sitedata.SiteData_Name;
+                try
+                {
+                    // TODO: Add update logic here
+                    _context.Update(OldSiteData);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!SiteDataExits(id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                };
+                
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: SiteData/Delete/5
@@ -111,6 +229,21 @@ namespace Prototype.Areas.Admin.Controllers
             {
                 return View();
             }
+        }
+
+        private bool SiteDataExits(int id)
+        {
+            return _context.SiteData.Any(e => e.SiteDataId == id);
+        }
+
+        private bool SiteDataExits(IEnumerable<SiteData> sitedata)
+        {
+            foreach (var item in sitedata)
+            {
+                return _context.SiteData.Any(e => e.SiteDataId == item.SiteDataId);
+            }
+
+            return false;
         }
     }
 }

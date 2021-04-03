@@ -2,7 +2,8 @@
 @model IEnumerable< Prototype.Areas.Admin.Models.Participant>
 @{
     
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    Layout = "_Layout.cshtml";
+
 }
 
 
@@ -19,33 +20,57 @@
             </th>
 
             <th>
-                Participant Data
+                Participant Phase
+            </th>
+
+            <th>
+                Participant Group
+            </th>
+
+            <th>
+                Participant ResponseID
             </th>
 
             <th></th>
         </tr>
     </thead>
-
     <tbody>
-        @foreach (var item in Model)
+        @if (Model.Any())
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Participant_Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Participant_Data)
-                </td>
-                <td>
-                    <a asp-page="/Edit">Edit</a> |
-                    <a asp-page="/Details">Details</a> |
-                    <a asp-page="/Delete">Delete</a>
-                </td>
-            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Participant_Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Participant_Phase)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Participant_Group)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Participant_ResponseId)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ParticipantId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ParticipantId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ParticipantId">Delete</a>
+                    </td>
+                </tr>
+            }
+
         }
+        else
+        {
+        <tr>
+          <td>
+             Nothing Found!
+            </td>
+        </tr>
+                
+        }
+
     </tbody>
-    
-</table>
-<a class="btn btn-primary mb-3 text-white" style="width:auto">
-    Export to CSV
-</a>
+    </table>
+<a asp-action="Index">Back to List</a>

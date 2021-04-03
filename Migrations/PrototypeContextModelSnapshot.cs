@@ -164,9 +164,6 @@ namespace Prototype.Migrations
                     b.Property<int>("Participant_Age")
                         .HasColumnType("int");
 
-                    b.Property<string>("Participant_Data")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Participant_Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -179,6 +176,9 @@ namespace Prototype.Migrations
 
                     b.Property<int>("Participant_Phase")
                         .HasColumnType("int");
+
+                    b.Property<string>("Participant_ResponseId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ParticipantId");
 
@@ -257,14 +257,17 @@ namespace Prototype.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Participate_Phase")
+                    b.Property<bool>("SiteData_Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SiteData_Link")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SiteData_Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SiteData_Phase")
                         .HasColumnType("int");
-
-                    b.Property<string>("Survey_ID")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Website_Link")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("SiteDataId");
 

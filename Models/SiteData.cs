@@ -11,11 +11,13 @@ namespace Prototype.Models
 
         public int SiteDataId { get; set; }
 
-        public string Website_Link { get; set; }
+        public string SiteData_Link { get; set; }
 
-        public int Participate_Phase { get; set; }
+        public string SiteData_Name { get; set; }
 
-        public string Survey_ID { get; set; }
+        public bool SiteData_Active { get; set; } = false;
+
+        public int SiteData_Phase { get; set; }
 
 
     }

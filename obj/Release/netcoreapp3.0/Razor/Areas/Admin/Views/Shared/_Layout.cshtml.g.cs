@@ -13,6 +13,13 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
+#line 4 "F:\Unistuff\PX\Project\Prototype\Areas\Admin\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Authorization;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 1 "F:\Unistuff\PX\Project\Prototype\Areas\Admin\Views\Shared\_ViewImports.cshtml"
 using Prototype;
 
@@ -27,6 +34,7 @@ using Prototype.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0a7103202a9a0788a61a921cd4e2dd5f08ef9573", @"/Areas/Admin/Views/Shared/_Layout.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a285dd65e684806d857970f39ee2bf05b1dcc282", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e03d3c7377862f32a875004b8297c71fc40df92b", @"/Areas/Admin/Views/Shared/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Shared__Layout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
@@ -64,7 +72,7 @@ using Prototype.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h1>Admin</h1>\r\n\r\n<div>\r\n    <h4>Manage Site Content</h4>\r\n    <hr />\r\n    <div class=\"row\">\r\n        <div class=\"col-md-3\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "0a7103202a9a0788a61a921cd4e2dd5f08ef95733793", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "0a7103202a9a0788a61a921cd4e2dd5f08ef95734163", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

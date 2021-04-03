@@ -1,0 +1,47 @@
+﻿@model Prototype.Areas.Admin.Models.Participant
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Movie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ParticipantId" />
+            <div class="form-group">
+                <label asp-for="Participant_Email" class="control-label">Participant Email</label>
+                <input asp-for="Participant_Email" class="form-control" />
+                <span asp-validation-for="Participant_Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Participant_Phase" class="control-label">Participant Phase</label>
+                <input asp-for="Participant_Phase" class="form-control" />
+                <span asp-validation-for="Participant_Phase" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Participant_Group" class="control-label">Participant Group</label>
+                <input asp-for="Participant_Group" class="form-control" />
+                <span asp-validation-for="Participant_Group" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Participant_ResponseId" class="control-label">Participant ResponseId</label>
+                <input asp-for="Participant_ResponseId" class="form-control" />
+                <span asp-validation-for="Participant_ResponseId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

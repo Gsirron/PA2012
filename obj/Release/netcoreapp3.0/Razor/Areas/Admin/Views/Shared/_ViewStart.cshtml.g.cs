@@ -13,6 +13,13 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
+#line 4 "F:\Unistuff\PX\Project\Prototype\Areas\Admin\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Authorization;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 1 "F:\Unistuff\PX\Project\Prototype\Areas\Admin\Views\Shared\_ViewImports.cshtml"
 using Prototype;
 
@@ -27,6 +34,7 @@ using Prototype.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"13b82ef97968a56a4de533f67cf3e21d662f41aa", @"/Areas/Admin/Views/Shared/_ViewStart.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a285dd65e684806d857970f39ee2bf05b1dcc282", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e03d3c7377862f32a875004b8297c71fc40df92b", @"/Areas/Admin/Views/Shared/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Shared__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {

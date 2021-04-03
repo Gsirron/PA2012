@@ -27,54 +27,41 @@ namespace Prototype.Areas.Admin.Models
             {
                 context.SiteData.AddRange(
 
+
+                    new SiteData()
+                    {   
+                        SiteData_Phase = 1,
+                        SiteData_Link = "https://surveyswesternsydney.au1.qualtrics.com",
+                        SiteData_Name = "Phase 1",
+
+                    },
                     new SiteData()
                     {
-                        Website_Link = "https://surveyswesternsydney.au1.qualtrics.com",
-                        Participate_Phase = 1,
-                        Survey_ID = ""
-                    });
+                        SiteData_Phase = 2,
+                        SiteData_Link = "https://surveyswesternsydney.au1.qualtrics.com",
+                        SiteData_Name = "Phase 2 (Pre-Test)",
+
+                    }
+                    ,new SiteData()
+                    {
+                        SiteData_Phase = 3,
+                        SiteData_Link = "https://surveyswesternsydney.au1.qualtrics.com",
+                        SiteData_Name = "Phase 2(Post-Test)",
+
+                    }
+                    ,new SiteData()
+                    {
+                        SiteData_Phase = 4,
+                        SiteData_Link = "https://surveyswesternsydney.au1.qualtrics.com",
+                        SiteData_Name = "Closed",
+                        SiteData_Active = true,
+
+                    }
+                    
+                    );
 
                 context.SaveChanges();
             }
-
-
-
-
-            if (context.Participant.Any())
-            {
-                return; // db has been seeded
-            }
-            else
-            {
-                context.Participant.AddRange(
-
-                new Participant()
-                {
-
-                    Participant_Email = "Janedo@gmail.com",
-                    Participant_Data = "Participant Data"
-                },
-
-
-                new Participant()
-                {
-
-                    Participant_Email = "Janes.Bob@gmail.com",
-                    Participant_Data = "Participant Data"
-                },
-
-                new Participant()
-                {
-
-                    Participant_Email = "Megan.Dale@gmail.com",
-                    Participant_Data = "Participant Data"
-                }
-
-                );
-
-                context.SaveChanges();
-            }
-
             
             
         }
